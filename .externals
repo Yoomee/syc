@@ -1,0 +1,42 @@
+[.]
+scm = git
+
+[app]
+path = app
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/app.git
+
+[config]
+path = config
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/config.git
+
+[db]
+path = db
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/db.git
+
+[script]
+path = script
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/script.git
+
+[lib]
+path = lib
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/lib.git
+
+[test]
+path = test
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/test.git
+
+[public]
+path = public
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/public.git
+
+[vendor]
+path = vendor
+scm = git
+repository = git://git.yoomee.com:4321/tramlines/vendor.git
