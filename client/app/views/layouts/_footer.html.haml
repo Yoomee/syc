@@ -1,0 +1,22 @@
+#sketch
+
+#footer
+  #footer_links
+    %p#copyright
+      %strong
+        \&copy; 2010 Sheffield Young Carers
+      
+    %a#siteby{ :href => "http://www.yoomee.com" }
+      site by
+    %ul
+      - if @is_sys_admin
+        %li
+          %a{ :href => "/admin" }
+            %strong
+              admin
+      %li
+        %a{ :href => "legal" }
+          legal
+      %li
+        %a{ :href => "link2" }
+          another link

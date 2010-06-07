@@ -1,0 +1,13 @@
+-params[:id] ||= params[:enquiry][:form_name]
+-# Currently this title is hard-coded, but we will ultimately want to fix this.
+- title 'Contact us'
+- semantic_form_for @enquiry do |form|
+  =form.error_messages
+  -form.inputs do
+    =form.input :form_name, :as => "hidden"
+    =form.input :member_id, :as => "hidden"
+    =render :partial => "#{params[:id].to_s}_form"
+  - form.buttons do 
+    = form.commit_button "Send"
+-options_panel do
+  =back_link

@@ -1,0 +1,42 @@
+.home_page
+  .home_page_left
+    .intro_text
+      %h1
+        Welcome to Sheffield Young Carers.
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum scelerisque urna in faucibus. Integer sed sapien sagittis nunc interdum elementum. Nam eu felis eros.
+        = link_to 'More about us here', Page.about_us, :class => 'read_more'
+    .are_you  
+      %h2.title
+        Are you...
+      %ul
+        %li
+          = link_to 'Looking after someone at home?', Section.find_by_id(9), :id=>'a_y_1'
+        %li
+          = link_to 'Related to a young carer?', Section.find_by_id(8), :id=>'a_y_2'
+        %li
+          = link_to 'A professional?', Section.find_by_id(4), :id=>'a_y_3'
+        %li
+          = link_to ' Interested in supporting us?', Section.find_by_id(11), :id=>'a_y_4'
+        %li
+          = link_to ' Interested in working with us?', Section.find_by_id(6), :id=>'a_y_5'
+  
+  .home_page_right
+    %h2.title
+      Latest News
+    %ul
+      -@news.each do |page|
+        %li
+          .item_image
+            =link_to photo_for(page, "145x90#"), page
+          .item_info
+            %h3
+              =link_to page.title, page
+            %p
+              =strip_tags truncate_html(page.text, 140)
+    #twitter
+      =link_to "Latest Tweet", 'http://twitter.com/sheffyoungc', :id => "latest_tweet"
+      %span.tweet
+        =highlight_tweet_links(get_latest_tweet_from("sheffyoungc"))
+      =link_to "View our twitter page", 'http://twitter.com/sheffyoungc', :id => "view_twitter"
+      

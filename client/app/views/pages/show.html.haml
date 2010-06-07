@@ -1,0 +1,36 @@
+%h1.page_title
+  -if @page.section == Section.are_you
+    Are you...
+    %br
+  =@page.title
+%br.clear
+.left_col
+  %h2
+    =@page.section.name
+  %ul
+    -@page.section.pages.each do |page|
+      %li
+        =link_to page.title, page
+
+-unless @page.published?
+  %p#page_status
+    =@page.status_string
+.main_col
+  =render :partial => 'content', :locals => {:page => @page}
+  %br.clear
+  -options_panel do
+    ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
+    =link_if_allowed 'Edit', edit_page_proc(@page)
+    =link_if_allowed 'Delete', page_proc(@page), :method => :delete, :confirm => 'Are you sure you want to delete this page?'
+    =link_if_allowed 'Add page', new_section_page_proc(@page.section)
+.right_col
+  -if @page.has_photo?
+    .article_image
+      =photo_for(@page, "304x")    
+  =pull_quote(@page, :call_to_action)
+%br.clear
+-if @page.has_related_items?
+  #other_stuff
+    %h2
+      Other Stuff
+    =render_related_items(@page)

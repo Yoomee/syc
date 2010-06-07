@@ -1,0 +1,60 @@
+!!! Strict
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml" }
+  %head
+    %title
+      = site_name
+      \:
+      = site_slogan
+      \// 
+      = page_title
+      = page_subtitle
+    %meta{ :name => "Generator", :content => "Yoomee (Ruby on Rails)" }
+    %meta{ :name => "robots", :content => "index, follow" }
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{ :name => "info", :content => "#{page_title}#{page_subtitle}" }
+    %link{ :href => "/images/favicon.ico", :rel => "shortcut icon" }
+    = google_javascripts :jquery, :jqueryui
+    = javascript_include_tag 'jquery.autocomplete'
+    = javascript_include_tag 'jrails'
+    = javascript_include_tag 'jquery.cycle'
+    = javascript_include_tag 'tramlines'
+    = stylesheet_link_tag 'client/styles'
+    = stylesheet_link_tag 'jquery-ui'
+    = stylesheet_link_tag 'jquery.autocomplete'
+    /[if IE 6]
+      = stylesheet_link_tag 'client/ie6.css'
+    = formtastic_stylesheet_link_tag
+    =yield :head
+    -unless current_page?(new_session_path) 
+      :javascript
+        $(document).ready(function() {
+          $("#member_login_bttn").click(function () {
+            $("#login_slide_bar").slideToggle("slow");
+            $("#member_login_bttn").toggleClass("open");
+          });      
+        });
+  - body_tag do
+    -#<body id='= is_home? ? 'home' : 'inside''>
+    #top
+      =render :partial => 'layouts/site_nav'  
+    #login_slide_bar
+      #login_slide_bar_inside
+        =render :partial=>'sessions/form' unless current_page?(new_session_path)
+    %br.clear  
+    =render :partial => 'layouts/header'    
+    #wrapper
+      #main.content
+        -if flash[:notice]
+          %p#flash_notice
+            =flash[:notice]
+        -if flash[:error]
+          %p#flash_error
+            =flash[:error]
+        %h1
+          = page_title
+        -if @is_home
+          =@content_for_layout
+        -else
+          =render :partial => "layouts/inside_page"
+        %br.clear
+      =render :partial => 'layouts/footer'

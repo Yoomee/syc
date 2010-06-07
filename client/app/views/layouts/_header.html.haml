@@ -1,0 +1,11 @@
+#header
+  #header_inside
+    #user_links
+      - if logged_in?
+        = link_to 'Logout', session_path, :method => :delete
+        =link_if_allowed 'Admin', admin_proc
+        %strong
+          = link_to @logged_in_member.full_name, member_path(@logged_in_member)
+    %h1#site_logo
+      = link_to 'Sheffield Young Carers', :home  
+    =link_to 'Donate here &rarr;', 'http://www.thebiggive.org.uk/charity.php?charity_id=6896&search=46a5c1ef-6bef-4252-a5c3-88abf6fd01b8', :id=>'donate'
