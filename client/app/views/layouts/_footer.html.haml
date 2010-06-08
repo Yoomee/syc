@@ -4,11 +4,11 @@
   #footer_links
     %p#copyright
       %strong
-        \&copy; 2010 Sheffield Young Carers
-      
-    %a#siteby{ :href => "http://www.yoomee.com" }
-      site by
+        \&copy; 2010 Sheffield Young Carers | Tel: 0114 2584595
     %ul
+      %li#site_feedback
+        %a{ :href => "#" }
+          Site Feedback
       - if @is_sys_admin
         %li
           %a{ :href => "/admin" }
@@ -20,3 +20,14 @@
       %li
         %a{ :href => "link2" }
           another link
+      - if !logged_in? && !current_page?(new_session_path)    
+        %li
+          %a{ :href => "/session/new" }
+            Log in        
+    .funders    
+      %a#nhs{ :href => "http://www.sheffield.nhs.uk/", :target=>"_blank" }
+        NHS Sheffield   
+      %a#sheffield_council{ :href => "http://www.sheffield.gov.uk/index.asp?pgid=1912", :target=>"_blank" }
+        Sheffield city council         
+    %a#siteby{ :href => "http://www.yoomee.com" }
+      site by

@@ -17,7 +17,4 @@
     -form_for Search.new do |search_form|
       =search_form.text_field :term, :id => 'search_field'
       =submit_tag "Search", :name => nil, :id => 'search_icon'
-
-  - if !logged_in? && !current_page?(new_session_path)
-    = link_to 'login', '#', :id => 'member_login_bttn'    
   
