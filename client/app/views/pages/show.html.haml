@@ -27,7 +27,7 @@
   -if @page.has_photo?
     .article_image
       =photo_for(@page, "304x")    
-  =pull_quote(@page, :call_to_action)
+  =snippet(@page, :call_to_action)
 %br.clear
 -if @page.has_related_items?
   #other_stuff

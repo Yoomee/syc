@@ -111,7 +111,7 @@ h2.title, .left_col h2,  #other_stuff h2{
 }
 /* ====================  shared css3 styles  ===================== */
 
-#main, input, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, #search_box, #nav ul li a {
+#main, input, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .snippet, div#page_related_col, a.backto, #search_box, #nav ul li a {
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
@@ -2587,13 +2587,13 @@ a.backto {
 	padding:0 0 20px;
 	max-width:440px;
 }
-#pull_quote_large_image {
+#snippet_large_image {
 	background:none repeat scroll 0 0 #CCCCCC;
 	float:left;
 	margin:0 0 20px;
 	width:740px;
 }
-#pull_quote_large_image img {
+#snippet_large_image img {
 	width:740px;
 }
 #page_full_width {
@@ -2648,14 +2648,14 @@ div.photo_holder {
 	color:#FFFFFF;
 	float:left;
 }
-.pull_quote {
+.snippet_quote {
 	background:none repeat scroll 0 0 #999999;
 	float:left;
 	margin:0 0 20px;
 	padding:10px 15px;
 	width:250px;
 }
-.pull_quote * {
+.snippet_quote * {
 	margin:0;
 	padding:0;
 }
@@ -2699,7 +2699,7 @@ div.article_image {
     -webkit-border-radius:0px;
     border-radius:0px;
 }
-#pull_quote_large {
+#snippet_quote_large {
 	background:#53534D;
 	
 }
@@ -2711,7 +2711,7 @@ div.article_image {
 	width:280px;
 }
 
-#pull_quote_large h3 {
+#snippet_quote_large h3 {
 	color:#FFFFFF;
 	font-size:17px;
 	line-height:23px;
@@ -2987,8 +2987,8 @@ ul.tabs_container li.active {
 ul.tabs_container li#pages_details_link a {
  background-image: url(/images/icon_details.png);
 }
-ul.tabs_container li#pages_pull_quotes_link a {
- background-image: url(/images/icon_pull_quotes.png);
+ul.tabs_container li#pages_snippets_link a {
+ background-image: url(/images/icon_snippets.png);
 }
 ul.tabs_container li#pages_publishing_link a {
  background-image: url(/images/icon_publishing.png);
