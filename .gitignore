@@ -1,8 +1,9 @@
-app
-config
-db
-script
-lib
-test
-public
-vendor
+/app
+/config
+/db
+/script
+/lib
+/test
+/public
+/vendor
+/log
