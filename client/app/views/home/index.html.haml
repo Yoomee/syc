@@ -33,7 +33,7 @@
             %h3
               =link_to page.title, page
             %p
-              =strip_tags truncate_html(page.text, 140)
+              =strip_tags page.summary(140)
     #twitter
       =link_to "Latest Tweet", 'http://twitter.com/sheffyoungc', :id => "latest_tweet"
       %span.tweet
