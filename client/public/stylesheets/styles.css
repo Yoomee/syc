@@ -477,9 +477,9 @@ h1#site_logo a:active {
 	display: block;
 	right:5px;
 	position:absolute;
-	width:130px;
+	width:100px;
 	z-index:200;
-	padding: 0 20px;
+	padding: 0 25px;
 	
 	 -moz-border-radius:4px;
      -webkit-border-radius:4px;
@@ -493,9 +493,9 @@ h1#site_logo a:active {
 	text-indent: -9000em;
 	color:#fff;
 	padding: 0px 5px;
-	margin: 10px 0px 0 0;
-	width: 15px;
-	height: 15px;
+	margin: 11px 0px 0 0;
+	width: 10px;
+	height: 14px;
 	background: url(/images/cycle_a.png) no-repeat center;
 	cursor: default;
 
@@ -510,17 +510,18 @@ a.cycle_next, a.cycle_prev {
 	position: absolute;
 	width: 10px;
 	margin: 0;
+	height: 20px;
 	
 }
 a.cycle_next {
 	background: url(/images/cycle_next.png) no-repeat center;
 	right: 5px;
-	top: 10px;
+	top: 7px;
 }
 a.cycle_prev {
 	background: url(/images/cycle_prev.png) no-repeat center;
 	left: 5px;
-	top: 10px;
+	top: 7px;
 }
 div#home_slideshow {
 	display: none;
@@ -570,7 +571,7 @@ div#home_slideshow div#home_photo_5 {
 	width:450px;
 }
 #home #user_links {
-	margin: 0 200px 0 0;
+	margin: 0 180px 0 0;
 }
 #user_links p {
 	margin:0;
@@ -1636,7 +1637,7 @@ div.funders a {
 a#nhs {
 	background: url(/images/nhs.png) no-repeat 0 0;
 	width: 65px;
-	height: 26px;
+	height: 33px;
 	margin: 4px 0 0 20px;
 }
 
@@ -3633,4 +3634,32 @@ html body form {
 	-webkit-transform: rotate(-2deg) translate(0px,0px); 
 	-moz-transform: rotate(-2deg) translate(0px,0px);
 	transform: rotate(-2deg) translate(0px,0px);	
+}
+/*============= contact us styling ==================*/
+div#contact_us_top {
+	float: left;
+	width: 100%;
+}
+div#contact_us_form {
+	float: left;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	padding: 15px 0 0 00px;
+	
+}
+#contact_us_map {
+	float: left;
+	margin: 0 20px 20px 0;	
+}
+
+div#contact_us_form #enquiry_fields_message {
+	margin-bottom: 0 ;
+}
+
+div#contact_us_form input#enquiry_submit.create {
+	margin: 0;
+}
+div#contact_us_form input, div#contact_us_form textarea {
+	width: 480px;
+	
 }
