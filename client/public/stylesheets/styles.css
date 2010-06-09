@@ -8,6 +8,8 @@
 
 /* @override http://localhost:3000/stylesheets/client/styles.css */
 
+/* @override http://localhost:3000/stylesheets/client/styles.css */
+
 /* the tramlines vanilla stylesheet */
 
 /* ====================  Reset styles ===================== */
@@ -409,7 +411,7 @@ div#top {
 	width:100%;
 }
 body#home #header{
-	background:#000 url("/images/image_home_1.jpg") no-repeat center -129px;
+	background: #000;
 	margin-bottom: 25px;
 	height:265px;
 }
@@ -421,6 +423,8 @@ body#home #header{
 #header_inside {
 	clear: both;
 	height: 120px;
+	position: relative;
+	z-index: 4;
 }
 #login_slide_bar {
 	background:#D4205D;
@@ -460,7 +464,6 @@ body#home #header{
 #page_title {
 
 }
-
 h1#site_logo {
 	margin:0;
 	float: left;
@@ -482,6 +485,36 @@ h1#site_logo a {
 h1#site_logo a:active {
 }
 
+div#home_slideshow {
+	display: none;
+}
+#home div#home_slideshow {
+	background: #000;
+	width: 100%;
+	height: 265px;
+	position: absolute;
+	top: 45px;	
+	z-index: 0;
+	display: block;
+}
+#home div#home_slideshow div {
+	width: 100%;
+	height: 265px;	
+	float: left;
+}
+
+div#home_slideshow div#home_photo_1 {
+	background: url(/images/home_photo_1.jpg) repeat-x top center;
+}
+div#home_slideshow div#home_photo_2 {
+	background: url(/images/home_photo_2.jpg) repeat-x top center;
+}
+div#home_slideshow div#home_photo_3 {
+	background: url(/images/home_photo_3.jpg) repeat-x top center;
+}
+div#home_slideshow div#home_photo_4 {
+	background: url(/images/home_photo_4.jpg) repeat-x top center;
+}
 #user_links {
 	float:right;
 	margin:0px 0;
@@ -1464,23 +1497,23 @@ ul.action_links li {
 /* ====================  Sketch  ===================== */
 
 #sketch{
-	background: url(/images/footer.jpg) no-repeat 0 0;
+	background:url("/images/footer.png") no-repeat scroll center top transparent;
 	color: #999;
 	padding: 10px;
-	height: 280px;
-	border-top:4px solid #000000;
+	height: 140px;
+	border-bottom:4px solid #000000;
 }
 
 /* ====================  footer  ===================== */
 
 #footer {
-	background:url("/images/footer.png") no-repeat scroll center top transparent;
 	clear:both;
-	margin-top:15px;
+	margin:0px 0;
 	padding:0;
 	position:relative;
 	float: left;
 	width: 945px;
+	background
 }
 #copyright {
 	display:block;
@@ -1489,10 +1522,10 @@ ul.action_links li {
 	margin:0px;
 }
 div#footer_links {
-	background:none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
 	float:left;
 	margin:0px 0px 0;
 	padding:10px 0px;
+	width: 830px;
 }
 #footer_links ul {
 	margin:0px;
@@ -1510,10 +1543,15 @@ div#footer_links {
 }
 #footer_links ul li a {
 	float: left;
-	margin: 10px 10px 0 0;
+	margin: 5px 10px 0 0;
+}
+
+#footer_links ul li#site_feedback a {
+	background: url(/images/site_feedback.png) no-repeat;
+	padding: 0 0 0 20px;
 }
 #siteby {
-	background-image:url("/images/yoomee.png");
+	background-image:url("/images/yoomee_black.png");
 	background-position:right top;
 	background-repeat:no-repeat;
 	display:block;
@@ -1522,14 +1560,41 @@ div#footer_links {
 	margin-top:5px;
 	padding:0 38px 0 0;
 	position:absolute;
-	right:0px;
+	right:5px;
 	text-indent:-9000px;
-	bottom:20px;
-	width:89px;
+	top:7px;
+	width:60px;
 }
 #siteby:hover {
 
 }
+
+div.funders {
+	float: right;
+	margin: -15px 0 0 0px;
+	width: 200px;
+
+	
+}
+div.funders a {
+	display: block;
+	text-indent: -9000em;
+	float: right;
+}
+
+a#nhs {
+	background: url(/images/nhs.png) no-repeat 0 0;
+	width: 65px;
+	height: 26px;
+	margin: 4px 0 0 20px;
+}
+
+a#sheffield_council {
+	background: url(/images/council.png) no-repeat 0 0;
+	width: 40px;
+	height: 33px;
+}
+
 /* ====================  blog comments  ===================== */
 .comment_wrapper {
 	background:#F5F5F5 none repeat scroll 0 0;

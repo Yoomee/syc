@@ -31,8 +31,18 @@
           $("#member_login_bttn").click(function () {
             $("#login_slide_bar").slideToggle("slow");
             $("#member_login_bttn").toggleClass("open");
-          });      
+          }); 
+          $('#home #home_slideshow').cycle({
+            fx: 'fade',
+            speed: 'slow',
+            timeout: 8000,
+            easing: 'easeOutQuint',
+            pager: '.cycle_nav',
+            next: '.cycle_next',
+            prev: '.cycle_prev'
+          });     
         });
+        
   - body_tag do
     -#<body id='= is_home? ? 'home' : 'inside''>
     #top
