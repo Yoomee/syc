@@ -1,11 +1,13 @@
 %h1.page_title
-  -if @page.section == Section.are_you
+  -if @page.root_section == Section.are_you
     Are you...
     %br
   =@page.title
 %br.clear
 .left_col
   %h2
+    -if @page.root_section == Section.are_you
+      Are you...
     =@page.section.name
   %ul
     -@page.section.pages.each do |page|

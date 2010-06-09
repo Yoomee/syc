@@ -2,15 +2,15 @@
   %ul
     %li#link_home
       =link_to 'Home', {:controller => '/home'}
-    %li
+    %li#link_about_us
       =link_to "About us", Section.about_us
-    %li
-      =link_to 'Are you...', Section.are_you
-    %li
+    %li#link_what_we_do
+      =link_to 'What we do', Section.are_you
+    %li#link_news
       =link_to 'News', Section.news
-    %li
+    %li#link_ypp
       =link_to 'YPP', Section.ypp
-    %li
+    %li#link_contact_us
       =link_to "Contact us", new_enquiry_path(:id => 'contact')
 
   #search_box

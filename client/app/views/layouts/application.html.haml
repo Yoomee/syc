@@ -32,12 +32,12 @@
             $("#login_slide_bar").slideToggle("slow");
             $("#member_login_bttn").toggleClass("open");
           }); 
-          $('#home #home_slideshow').cycle({
+          $('.cycle').cycle({
             fx: 'fade',
             speed: 'slow',
-            timeout: 8000,
+            timeout: 10000,
             easing: 'easeOutQuint',
-            pager: '.cycle_nav',
+            pager: '.cycle_nav_inner',
             next: '.cycle_next',
             prev: '.cycle_prev'
           });     
