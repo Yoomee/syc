@@ -218,6 +218,15 @@ a:hover {
 	z-index: 20;
 }
 
+.admin_links {
+  color: blue;
+  font-size: 10px;
+}
+
+.admin_links a {
+  color: blue;
+}
+
 /* =======  form styles  ====== */
 input, textarea {
 	border:1px solid #999999;
