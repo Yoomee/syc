@@ -1,36 +1,34 @@
 #contact_us_top
+  #contact_us_top_left
+    %p
+      If you want to find out more about anything you've seen on this website, please do get in touch with us at: 
+    %p#address
+      %strong 
+        Sheffield Young Carers Project
+      %br
+      Sheaf Bank Business Park
+      %br
+      Unit R7b, Riverside Block
+      %br
+      20 Prospect Road
+      %br
+      Sheffield
+      %br
+      S2 3EN
+    %p#phone
+      Tel: 0114 258 4595
+    %p#email
+      Email: 
+      %a{ :href => "mailto:information@sheffieldyoungcarers.org.uk" }
+        information@sheffieldyoungcarers.org.uk 
   #contact_us_map
-    =link_to image_tag("http://maps.google.com/maps/api/staticmap?center=53.362911,-1.470388&zoom=15&size=500x300&maptype=roadmap&sensor=false&markers=color:blue|53.362911,-1.470388"), "http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=Sheaf+Bank+Business+Park+Unit+R7b,+20+Prospect+Road,+Sheffield+S2+3EN+&sll=53.361706,-1.469958&sspn=0.010475,0.016587&gl=uk&ie=UTF8&hq=&hnear=Unit+R7b,+Sheaf+Bank+Business+Park,+20+Prospect+Rd,+Heeley,+Sheffield,+South+Yorkshire+S2+3EN,+United+Kingdom&ll=53.36291,-1.470387&spn=0.010474,0.016587&z=16"
-  %p#address
-    %strong
-      Address
-    %br  
-    Sheffield Young Carers Project
-    %br
-    Sheaf Bank Business Park
-    %br
-    Unit R7b, Riverside Block
-    %br
-    20 Prospect Road
-    %br
-    Sheffield
-    %br
-    S2 3EN
-  %p#phone
-    %strong
-      Phone
-    %br  
-    0114 258 4595
-  %p#email
-    %strong
-      Email
-    %br
-    %a{ :href => "mailto:information@sheffieldyoungcarers.org.uk" }
-      information@sheffieldyoungcarers.org.uk 
+    %h4
+      Our location
+    =link_to image_tag("http://maps.google.com/maps/api/staticmap?center=53.362911,-1.470388&zoom=15&size=300x240&maptype=roadmap&sensor=false&markers=color:blue|53.362911,-1.470388"), "http://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=Sheaf+Bank+Business+Park+Unit+R7b,+20+Prospect+Road,+Sheffield+S2+3EN+&sll=53.361706,-1.469958&sspn=0.010475,0.016587&gl=uk&ie=UTF8&hq=&hnear=Unit+R7b,+Sheaf+Bank+Business+Park,+20+Prospect+Rd,+Heeley,+Sheffield,+South+Yorkshire+S2+3EN,+United+Kingdom&ll=53.36291,-1.470387&spn=0.010474,0.016587&z=16"    
 #contact_us_form
   %p#contact_us_intro
-    %strong 
-      Send us a message.
+    %h3
+      Send us a message
     %br
     Fill in the form below and press send  
   -params[:enquiry_fields] ||= {}
@@ -39,4 +37,6 @@
       =fields.input :name, :input_html => {:value => params[:enquiry_fields][:name] ||= @logged_in_member}
       =fields.input :email_address, :input_html => {:value => params[:enquiry_fields][:email_address] ||= (@logged_in_member.email unless @logged_in_member.nil?)}
       =fields.input :address, :as => 'text', :input_html => {:value => params[:enquiry_fields][:address], :rows => 4}
+      =fields.input :i_am_a, :as => 'select',:collection=>['I am a young carer','Someone in my family/my friend is a young carer', 'My work brings me into contact with young carers', 'I would like to support SYC','I would like to find out about volunteering with SYC ','I would like to receive regular email updates about SYC '], :input_html => {:value => params[:enquiry_fields][:i_am_a]}, :label=>' I would like more information because'
       =fields.input :message, :as => 'text', :input_html => {:value => params[:enquiry_fields][:message], :rows => 4}
+      

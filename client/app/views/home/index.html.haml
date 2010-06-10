@@ -2,13 +2,13 @@
   .home_page_left
     .intro_text
       %h1
-        %strong 
-          Sheffield Young Carers 
-        is an independent charity that has existed in the
+        Sheffield Young Carers is an independent charity that has existed in the
         Sheffield since 1997.  We are dedicated to supporting young carers across
-        the city.  We believe it is a right of every young carer to be recognised in
+        the city.  
+      %p
+        We believe it is a right of every young carer to be recognised in
         their role and to have the same opportunities and life chances as other
-        children and young people of a similar age.
+        children and young people of a similar age. 
         = link_to 'More about us &rarr;', Page.about_us, :class => 'read_more'
     .are_you  
       %h2.title
@@ -18,6 +18,8 @@
           = link_to 'Looking after someone at home?', Section.find_by_id(9), :id=>'a_y_1'
         %li
           = link_to 'Related to a young carer?', Section.find_by_id(8), :id=>'a_y_2'
+        %li
+          = link_to ' A parent or family member?', Section.find_by_id(6), :id=>'a_y_6'  
         %li
           = link_to 'A professional?', Section.find_by_id(4), :id=>'a_y_3'
         %li

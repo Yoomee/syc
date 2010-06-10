@@ -137,7 +137,7 @@ a.backto {
 /* ====================  general  ===================== */
 
 body {
-	color:#000;
+	color:#333;
 	margin:0;
 	float:left;
 	width:100%;
@@ -669,8 +669,8 @@ input#search_icon {
 	float:left;
 	height:20px;
 	margin:5px 5px 0 0;
-	padding:4px 10px 7px;
-	font: 19px/27px 'QuicksandBold', Arial, sans-serif;
+	padding:4px 7px 7px;
+	font: 17px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 }
 #nav ul li a:hover, .section_2 #nav ul li#link_news a, .controller_enquiries.action_new #nav ul li#link_contact_us a {	
@@ -688,11 +688,12 @@ div.home_page {
 	width: 945px;
 }
 #main .home_page h1 {
-	font-size:18px;
+	font-size:22px;
 	line-height:27px;
 	margin:0 0 10px;
 	font-weight: normal;
-	color: #000;
+	color:;
+	
 }
 .home_page_left {
 	float:left;
@@ -700,7 +701,7 @@ div.home_page {
 	margin:0 15px 0 0;
 	width:465px;
 }
-.home_page .home_page_left .intro_text, .home_page .home_page_left .intro_text h1{
+.home_page .home_page_left, .home_page .home_page_left {
 	color: #D4205D;
 }
 
@@ -743,6 +744,11 @@ div.are_you {
 	-moz-transform: rotate(-0deg);
 	transform: rotate(-0deg);	
 }
+.are_you ul li a#a_y_6 {
+	-webkit-transform: rotate(-1deg); 
+	-moz-transform: rotate(-1deg);
+	transform: rotate(-1deg);	
+}
 .are_you ul li a#a_y_3 {
 	-webkit-transform: rotate(-2deg); 
 	-moz-transform: rotate(-2deg);
@@ -755,8 +761,8 @@ div.are_you {
 }
 
 .intro_text h1, .intro_text p {
-
 	margin: 0;
+	color: #000;
 }
 .home_page_right {
 	float:left;
@@ -859,7 +865,7 @@ h1.page_title {
 	float: left;
 	width: 304px;
 }
-.main_col img[align="left"], html[dir="ltr"] img[align='left'] {
+.main_col img, html[dir="ltr"] img[align='left'] {
 	margin: 0 10px 0 0;
 }
 
@@ -924,7 +930,9 @@ h5.article_intro {
 	float: left;
 	width: 285px;
 }
-
+#other_stuff a.more_link {
+	display: none;
+}
 .item_info p {
 	
 }
@@ -3441,7 +3449,7 @@ html body form {
 .section_4 a {
 	color: #0063dc;
 }
-.section_4 .call_to_action, .section_3.action_show div#latest_story_section4.item h3 a  {
+.section_4 .call_to_action, .section_3.action_show div#latest_story_section4.item h3 a, .are_you ul li a#a_y_3   {
 	background-color: #0063dc;
 }
 .section_4 .left_col {
@@ -3456,7 +3464,7 @@ html body form {
 .section_6 a {
 	color: #ff8700;
 }
-.section_6 .call_to_action, .section_3.action_show div#latest_story_section6.item h3 a {
+.section_6 .call_to_action, .section_3.action_show div#latest_story_section6.item h3 a, .are_you ul li a#a_y_5  {
 	background-color: #ff8700;
 }
 .section_6 .left_col {
@@ -3471,7 +3479,7 @@ html body form {
 .section_10 a {
 	color: #11ac6a;
 }
-.section_10 .call_to_action, .section_3.action_show div#latest_story_section10.item h3 a {
+.section_10 .call_to_action, .section_3.action_show div#latest_story_section10.item h3 a, .are_you ul li a#a_y_6  {
 	background-color: #11ac6a;
 }
 .section_10 .left_col {
@@ -3486,7 +3494,7 @@ html body form {
 .section_8 a {
 	color: #00c4f2;
 }
-.section_8 .call_to_action, .section_3.action_show div#latest_story_section8.item h3 a  {
+.section_8 .call_to_action, .section_3.action_show div#latest_story_section8.item h3 a, .are_you ul li a#a_y_2  {
 	background-color: #00c4f2;
 }
 .section_8 .left_col {
@@ -3501,7 +3509,7 @@ html body form {
 .section_9 a {
 	color: #E8C821;
 }
-.section_9 .call_to_action, .section_3.action_show div#latest_story_section9.item h3 a  {
+.section_9 .call_to_action, .section_3.action_show div#latest_story_section9.item h3 a, .are_you ul li a#a_y_1  {
 	background-color: #ffdd00;
 }
 .section_9 .left_col {
@@ -3516,7 +3524,7 @@ html body form {
 .section_11 a {
 	color: #9c226a;
 }
-.section_11 .call_to_action, .section_3.action_show div#latest_story_section11.item h3 a  {
+.section_11 .call_to_action, .section_3.action_show div#latest_story_section11.item h3 a, .are_you ul li a#a_y_4   {
 	background-color: #9c226a;
 }
 .section_11 .left_col {
@@ -3612,6 +3620,10 @@ html body form {
 	padding: 7px 10px;
 	float: left;
 }
+html .section_3.action_show #main .item h3 a:hover {
+	background-color: #f43d17;
+	text-decoration: none;
+}
 .section_3.action_show .item p {
 	float: left;
 	clear: both;
@@ -3660,11 +3672,29 @@ div#contact_us_form {
 	padding: 15px 0 0 00px;
 	
 }
-#contact_us_map {
+div#contact_us_top_left {
 	float: left;
-	margin: 0 20px 20px 0;	
+	width: 525px;
 }
 
+select#enquiry_fields_i_am_a {
+	float: left;
+	clear: both;
+	margin: 0 0 20px;
+}
+
+#contact_us_map {
+	float: right;
+	margin: 0 0px 20px 20px;
+	width: 300px;
+	background: #d91c5c;
+	padding: 10px;
+	color: #fff;
+	
+}
+#contact_us_map h4 {
+	color: #fff;
+}
 div#contact_us_form #enquiry_fields_message {
 	margin-bottom: 0 ;
 }
