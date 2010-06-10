@@ -83,7 +83,7 @@ body, textarea, input {font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',Fr
 
 
 
-h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, .main_col h2 , .main_col h3, .main_col h4, #donate, .section_2 h1 {
+h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, .section_2 h1, h1#main_page_title {
 	font: 18px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -97,21 +97,16 @@ h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, .main_col
 	
 }
 */
-h2.title, .left_col h2,  #other_stuff h2, .section_2 h1{
+h2.title, .left_col h2,  #other_stuff h2, .section_2 h1, h1#main_page_title{
 	font-size: 22px;
 }
-.main_col h2 {
-	font-size: 26px;
-	line-height: 26px;
-	text-transform: none;
-}
-.main_col h3 {
-	font-size: 22px;
-	line-height: 22px;
+.main_col h2, .main_col h3 {
+	font-size: 20px;
+	line-height: 25px;
 	text-transform: none;
 }
 .main_col h4 {
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 20px;
 	text-transform: none;
 }
@@ -216,15 +211,6 @@ a:hover {
 }
 .ui-datepicker {
 	z-index: 20;
-}
-
-.admin_links {
-  color: blue;
-  font-size: 10px;
-}
-
-.admin_links a {
-  color: blue;
 }
 
 /* =======  form styles  ====== */
@@ -825,13 +811,15 @@ a#view_twitter {
 }
 /* ====================  Inside pages  ===================== */
 
-h1.page_title{
-	margin-left:170px;
-	float: left;
-	clear: both;
+h1.page_title, h1#main_page_title{
 	font-size: 30px;
 	line-height: 40px;
 	letter-spacing: -2px;
+}
+h1.page_title {
+	float: left;	
+	margin-left:170px;
+	clear: both;
 }
 .left_col{
 	border-top:3px solid #D4205D;
@@ -865,6 +853,7 @@ h1.page_title{
 	width: 445px;
 	margin-right: 15px;
 	padding: 10px;
+	color: #333;
 }
 .right_col{
 	float: left;
@@ -880,7 +869,10 @@ h1.page_title{
 
 h5.article_intro {
 	font-weight: normal;
-	font-size: 19px;
+	font-size: 18px;
+	line-height: 140%;
+	color: #333;
+	
 
 	
 }
@@ -2811,7 +2803,12 @@ div.photo_holder {
 	float: left;
 	width: 285px;
 }
-.call_to_action a {
+body #main .call_to_action * {
+	text-transform: none;
+	font-weight: normal;
+	font-size: 18px;
+}
+#main .call_to_action a {
 	color: #fff;
 	text-decoration:underline;
 }
@@ -3654,6 +3651,7 @@ html body form {
 div#contact_us_top {
 	float: left;
 	width: 100%;
+	clear: both;
 }
 div#contact_us_form {
 	float: left;

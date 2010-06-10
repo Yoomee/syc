@@ -60,7 +60,7 @@
         -if flash[:error]
           %p#flash_error
             =flash[:error]
-        %h1
+        %h1#main_page_title
           = page_title
         -if @is_home
           =@content_for_layout
