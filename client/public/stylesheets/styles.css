@@ -12,6 +12,8 @@
 
 /* @override http://localhost:3000/stylesheets/client/styles.css */
 
+/* @override http://localhost:3000/stylesheets/client/styles.css */
+
 /* the tramlines vanilla stylesheet */
 
 /* ====================  Reset styles ===================== */
@@ -81,7 +83,7 @@ body, textarea, input {font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',Fr
 
 
 
-h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, .main_col h2 , .main_col h3, .main_col h4, #donate {
+h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, .main_col h2 , .main_col h3, .main_col h4, #donate, .section_2 h1 {
 	font: 18px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -95,7 +97,7 @@ h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, .main_col
 	
 }
 */
-h2.title, .left_col h2,  #other_stuff h2{
+h2.title, .left_col h2,  #other_stuff h2, .section_2 h1{
 	font-size: 22px;
 }
 .main_col h2 {
@@ -690,10 +692,12 @@ div.home_page {
 	margin:0 0 30px;
 	width: 945px;
 }
-.home_page h1 {
-	font-size:20px;
-	line-height:25px;
+#main .home_page h1 {
+	font-size:18px;
+	line-height:27px;
 	margin:0 0 10px;
+	font-weight: normal;
+	color: #000;
 }
 .home_page_left {
 	float:left;
@@ -757,7 +761,6 @@ div.are_you {
 
 .intro_text h1, .intro_text p {
 
-	font-size: 20px;
 	margin: 0;
 }
 .home_page_right {
@@ -1045,6 +1048,9 @@ span.cal_sheet span.day {
 	display:block;
 	
 }
+.page_10.section_1 .main_col {
+	width: 605px;
+}
 
 /* ==================== login form ===================== */
 
@@ -1060,7 +1066,6 @@ span.cal_sheet span.day {
 }
 #login_form {
 	display:block;
-	color: #fff;
 }
 #login_form p {
 	display: block;
@@ -1876,11 +1881,12 @@ h3#latest_stories_intro {
 	float:left;
 	margin:0 0 17px;
 	padding:0 0 17px;
-	width:670px;
+	width:750px;
 }
 .text {
 	float:right;
-	width:510px;
+	width:540px;
+	margin: 0 0 10px;
 }
 .text h3 {
 	font-size:18px;
@@ -1911,10 +1917,11 @@ a.item_img {
 	overflow:hidden;
 	padding:0;
 	text-indent:-9000em;
-	width:140px;
+	width:190px;
 }
 a.item_img img {
 	float:left;
+	margin:  0 0 0 -40px;
 }
 
 /* ============================= Message inbox ========================== */
@@ -3377,7 +3384,6 @@ ul#selected_items li span.related_title{
 
 html body form {
   display: block;
-  background-color: black;
 }
 
 
@@ -3616,7 +3622,7 @@ html body form {
 	z-index: 32;
 }
 .section_3.action_show .item_img img {
-	
+	margin: 0;
 }
 .section_3.action_show .text {
 	float: left;

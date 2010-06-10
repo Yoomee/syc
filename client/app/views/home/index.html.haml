@@ -2,10 +2,14 @@
   .home_page_left
     .intro_text
       %h1
-        Welcome to Sheffield Young Carers.
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum scelerisque urna in faucibus. Integer sed sapien sagittis nunc interdum elementum. Nam eu felis eros.
-        = link_to 'More about us here', Page.about_us, :class => 'read_more'
+        %strong 
+          Sheffield Young Carers 
+        is an independent charity that has existed in the
+        Sheffield since 1997.  We are dedicated to supporting young carers across
+        the city.  We believe it is a right of every young carer to be recognised in
+        their role and to have the same opportunities and life chances as other
+        children and young people of a similar age.
+        = link_to 'More about us &rarr;', Page.about_us, :class => 'read_more'
     .are_you  
       %h2.title
         Are you...
@@ -35,8 +39,8 @@
             %p
               =strip_tags page.summary(140)
     #twitter
-      =link_to "Latest Tweet", 'http://twitter.com/sheffyoungc', :id => "latest_tweet"
+      =link_to "Latest Tweet", 'http://twitter.com/sheffyoungc', :id => "latest_tweet", :target =>"_blank"
       %span.tweet
-        =highlight_tweet_links(get_latest_tweet_from("sheffyoungc"))
-      =link_to "View our twitter page", 'http://twitter.com/sheffyoungc', :id => "view_twitter"
+        =highlight_tweet_links(get_latest_tweet_from("SheffYoungC"))
+      =link_to "View our twitter page", 'http://twitter.com/sheffyoungc', :id => "view_twitter", :target =>"_blank"
       

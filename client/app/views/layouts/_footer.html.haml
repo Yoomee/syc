@@ -4,7 +4,7 @@
   #footer_links
     %p#copyright
       %strong
-        \&copy; 2010 Sheffield Young Carers | Tel: 0114 2584595
+        \&copy; 2010 Sheffield Young Carers | Tel: 0114 258 4595
     %ul
       %li#site_feedback
         %a{ :href => "#" }
@@ -23,7 +23,7 @@
       - if !logged_in? && !current_page?(new_session_path)    
         %li
           %a{ :href => "/session/new" }
-            Log in        
+            Log in
     .funders    
       %a#nhs{ :href => "http://www.sheffield.nhs.uk/", :target=>"_blank" }
         NHS Sheffield   
