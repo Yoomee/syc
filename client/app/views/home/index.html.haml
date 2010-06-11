@@ -46,4 +46,8 @@
       %span.tweet
         =highlight_tweet_links(get_latest_tweet_from("SheffYoungC"))
       =link_to "View our twitter page", 'http://twitter.com/sheffyoungc', :id => "view_twitter", :target =>"_blank"
+      =if false
+        %a{ :href => "http://facebook.com", :target=>'_blank', :id=>'facebook_link'}
+          Join us on Facebook
+      
       
