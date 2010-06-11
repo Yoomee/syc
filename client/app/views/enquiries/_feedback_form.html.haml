@@ -1,0 +1,12 @@
+#contact_us_form
+  %p#contact_us_intro
+    %h3
+      We'd love to hear what you think about the site - comments, suggestions and feedback both positive and negative.
+    %br
+    Fill in the form below and press send  
+    -form.inputs do
+      =form.input :name
+      =form.input :email_address
+      =form.input :message, :as => 'text', :input_html => {:rows => 4}
+
+      
