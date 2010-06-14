@@ -1,5 +1,14 @@
-#search_box, ul#logged_out_nav li a {
+#search_box, ul#logged_out_nav li a, #nav ul li a, #search_box, input#search_field, input#search_icon, .section_3.action_show .item_img, .section_3.action_show .item h3 a, .section_3.action_show .text, .text h3, .section_3.action_show .item, .section_3.action_show #latestStoriesList, .section_3.action_show .item p   {
 	display:inline;
+}
+.section_3.action_show .item p {
+	width:260px;
+}
+#home .cycle_nav {
+	display:none;
+}
+#home h1#site_logo a {
+	background-image:url("/images/logo_home.gif");
 }
 #logged_in_as ul li a {
 	float:right;
