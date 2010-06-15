@@ -6,7 +6,7 @@ module FeedbackForm
   
   fields :name, :email_address, :message
   
-  email_to "si@yoomee.com"
+  email_to "information@sheffieldyoungcarers.org.uk"
   email_from "website@sheffieldyoungcarers.org.uk"
   email_subject "New Site Feedback submission"
   
