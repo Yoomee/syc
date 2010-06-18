@@ -73,9 +73,7 @@ body, textarea, input {font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',Fr
 	font-style: normal;
 }
 
-
-
-h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, .section_2 h1, h1#main_page_title, #contact_us_form h3 {
+h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, .section_2 h1, h1#main_page_title, #contact_us_form h3, .dash_col h2  {
 	font: 18px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -3163,9 +3161,6 @@ ul.tabs_container li a:hover{
 	background-color: transparent;
 	margin: 0px 0 0px 100px;
 }
-.controller_admin #admin_tab_content, .controller_admin.action_index h1#main_page_title  {
-	margin: 0 0 20px 100px;
-}
 .testsdfsd {
 	background: url(/images/smoke_gradient_w.png)
 }
@@ -3773,4 +3768,59 @@ div#contact_us_form input#enquiry_submit.create {
 div#contact_us_form input, div#contact_us_form textarea {
 	width: 480px;
 	
+}
+
+/*============= admin dashboard ==================*/
+
+#admin_dashboard {
+	background: #496B7B url(/images/sprite.png) repeat-x 0 -3680px;
+	float: left;
+	padding: 20px;
+	margin: 0 0 20px;
+	
+	 -moz-border-radius:8px;
+     -webkit-border-radius:8px;
+     border-radius:8px;
+}
+#admin_content {
+	margin: 0;
+	
+}
+.dash_col {
+	float: left;
+	width: 288px;
+	margin: 0 0 20px 20px;
+	background: #fff;
+	padding-bottom: 10px;
+	
+	
+	 -moz-border-radius:5px;
+     -webkit-border-radius:5px;
+     border-radius:5px;
+
+}
+.dash_col h2 {
+	background: url(/images/sprite.png) repeat-x 0 -70px;
+	float: left;
+	border-bottom: 1px solid #666;
+	width: 248px;
+	padding: 5px 20px;
+	text-shadow: 0 1px 0 #fff;
+	
+}
+.dash_col h3 {
+	font-size: 17px;
+}
+.dash_item {
+	float: left;
+	width: 228px;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 0 0 0 60px;
+}
+
+
+.controller_admin h1#main_page_title {
+	background: url(/images/icon_admin.png) no-repeat 0 6px;
+	padding: 0 0 0 35px;
+	margin: 0 0 10px 20px;
 }
