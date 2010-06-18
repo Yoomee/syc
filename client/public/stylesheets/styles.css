@@ -1,5 +1,11 @@
 /* @override http://localhost:3000/stylesheets/client/styles.css */
 
+/* @override http://localhost:3000/stylesheets/client/styles.css */
+
+/* @override http://localhost:3000/stylesheets/client/styles.css */
+
+/* @override http://localhost:3000/stylesheets/client/styles.css */
+
 /* the tramlines vanilla stylesheet */
 
 /* ====================  Reset styles ===================== */
@@ -69,7 +75,7 @@ body, textarea, input {font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',Fr
 
 
 
-h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, .section_2 h1, h1#main_page_title {
+h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, .section_2 h1, h1#main_page_title, #contact_us_form h3 {
 	font: 18px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -240,7 +246,7 @@ input, textarea {
 .formtastic input {
 	float: left;
 	clear: both;
-	background: #fff url(/images/input_bg.png);
+	background: #fff url(/images/sprite.png) repeat-x 0 -320px;
 	border: 1px solid #fff;
 
 }
@@ -274,11 +280,16 @@ html body.controller_enquiries form {
 	clear: both;	
 }
 .controller_enquiries .formtastic label {
-	color: #666;
+	color: #000;
 	float: left;
 	clear: both;
 }
-
+#contact_us_form h3 {
+	
+}
+.formtastic p.contact_us_form_intro {
+	margin: 0 0 20px 0;
+}
 /* =======  colours  ====== */
 a, .required  {
 	color:#D4205D;
@@ -293,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========button styles ========= */
 /* general large button*/
 input[type="submit"], a.bttn_l {
-	background:url(/images/bttn_gloss.png) repeat-x scroll -1px -5px #dadada;
+	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;
 	border:none;
 	
 	
@@ -405,7 +416,7 @@ body#home #header{
 	display: block;
 	padding: 6px 10px;
 	color: #333;
-	background:#c5c7c8 url(/images/bttn_admin.png) repeat-x 0 0;	
+	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;	
 	text-shadow: 0 1px 0 #fff;
 	font-size: 18px;
 	bottom: 15px;
@@ -483,12 +494,12 @@ h1#site_logo a:active {
 	margin: 11px 0px 0 0;
 	width: 10px;
 	height: 14px;
-	background: url(/images/cycle_a.png) no-repeat center;
+	background: url(/images/sprite.png) no-repeat 5px -1198px;
 	cursor: default;
 
 }
 .cycle_nav a.activeSlide {
-	background-image: url(/images/cycle_a_active.png);
+	background-position: 5px -1258px;
 }
 .cycle_nav a:hover {
 }
@@ -501,12 +512,12 @@ a.cycle_next, a.cycle_prev {
 	
 }
 a.cycle_next {
-	background: url(/images/cycle_next.png) no-repeat center;
+	background-position: 5px -1078px;
 	right: 5px;
 	top: 7px;
 }
 a.cycle_prev {
-	background: url(/images/cycle_prev.png) no-repeat center;
+	background-position: 5px -1138px;
 	left: 5px;
 	top: 7px;
 }
@@ -618,7 +629,7 @@ input#search_field {
 	
 }
 input#search_icon {
-	background:url("/images/icon_search.png") no-repeat scroll 0 0 transparent;
+	background:url("/images/sprite.png") no-repeat scroll 0 -1320px transparent;
 	border:medium none;
 	display:block;
 	float:left;
@@ -3084,7 +3095,7 @@ div.tabbertab div.forum_message h4 {
 
 ul.tabs_container{
 	float:left;
-	width:100%;
+	width:700px;
 	margin: 0 0 0 0px;
 }
 ul.tabs_container li {
@@ -3106,7 +3117,7 @@ ul.tabs_container li {
 }
 
 ul.tabs_container li a{
-	background: no-repeat 15px;
+	background: url(/images/sprite.png) no-repeat;
 	float:left;
 	margin:0;
 	padding:10px 25px 10px 50px;
@@ -3120,7 +3131,7 @@ ul.tabs_container li a{
 }
 
 ul.tabs_container li.active {
-	background: url(/images/pages_tab_3.png) repeat-x 0 -0px;
+	background: url(/images/sprite.png) repeat-x 0 -3680px;
 	border-bottom: 2px solid #6593ab;
 	margin-bottom: -2px;
 	text-shadow: 0px -1px 0px #496b7b;
@@ -3129,28 +3140,31 @@ ul.tabs_container li.active {
 }
 
 ul.tabs_container li#pages_details_link a {
- background-image: url(/images/icon_details.png);
-}
-ul.tabs_container li#pages_pull_quotes_link a {
- background-image: url(/images/icon_pull_quotes.png);
+	background-position: 15px -1430px;
 }
 ul.tabs_container li#pages_publishing_link a {
- background-image: url(/images/icon_publishing.png);
+ background-position: 15px -1610px;
 }
 ul.tabs_container li#pages_snippets_link a {
- background-image: url(/images/icon_snippets.png);
+ background-position: 15px -1730px;
 }
 ul.tabs_container li#pages_related_items_link a {
- background-image: url(/images/icon_related_pages.png);
+ background-position: 15px -1790px;
 }
 
 ul.tabs_container li a:hover{
 	text-decoration: none;
 }
-
-.formtastic.page, .formtastic.section {
+.action_edit h1#main_page_title {
+	margin: 0 0 10px 100px;
+}
+.formtastic.page, .formtastic.section, .controller_admin ul.tabs_container{
 	float: left;
 	background-color: transparent;
+	margin: 0px 0 0px 100px;
+}
+.controller_admin #admin_tab_content, .controller_admin.action_index h1#main_page_title  {
+	margin: 0 0 20px 100px;
 }
 .testsdfsd {
 	background: url(/images/smoke_gradient_w.png)
@@ -3173,7 +3187,7 @@ fieldset.buttons {
 }
 
 .sections_tab, .pages_tab, #admin_tab_content, #tab_loader {
-	background: #496B7B url(/images/pages_tab_3.png) repeat-x 0 -0px;
+	background: #496B7B url(/images/sprite.png) repeat-x 0 -3680px;
 	padding: 20px;
 	color: #fff;
 	float: left;
@@ -3228,7 +3242,7 @@ fieldset.buttons {
 	display: block;
 	font-size: 16px;
 	line-height: 16px;
-	background: #c5c7c8 url(/images/bttn_admin.png) repeat-x 0 0;
+	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;
 	padding: 0;
 	width: 190px;
 
@@ -3246,7 +3260,7 @@ fieldset.buttons {
 	display: block;
 	padding: 10px 16px 12px 40px;
 	color: #333;
-	background: no-repeat 12px;	
+	background: url(/images/sprite.png) no-repeat;	
 	text-shadow: 0 1px 0 #fff;
 	width: 140px;
 	
@@ -3264,36 +3278,36 @@ li#new_page, li#new_section, #admin_tab_content ul li#new_photo_album a, #admin_
 }
 
 ul.tabs_container li#content_admin_tab a {
- background-image: url(/images/icon_content.png);
+ background-position: 15px -1370px;
 }
 ul.tabs_container li#enquiries_admin_tab a {
- background-image: url(/images/icon_enquiries.png);
+ background-position: 15px -1670px;
 }
 ul.tabs_container li#documents_admin_tab a {
- background-image: url(/images/icon_documents.png);
+ background-position: 15px -1550px;
 }
 ul.tabs_container li#photo_albums_admin_tab a {
- background-image: url(/images/icon_photo_albums.png);
+ background-position: 15px -1490px;
 }
 
 #admin_tab_content ul li#list_photo_albums a, #admin_tab_content ul li#new_photo_album a {
-	background-image: url(/images/icon_small_photo_album.png);
+	background-position: 10px -2148px;
 	
 }
 #admin_tab_content ul li#list_enquiries a {
-	background-image: url(/images/icon_small_list_enquiries.png);
+	background-position: 10px -2268px;
 	
 }
 #admin_tab_content ul li#list_sections a, #admin_tab_content ul li#new_section a {
-	background-image: url(/images/icon_small_sections.png);
+	background-position: 10px -2090px;
 	
 }
 #admin_tab_content ul li#new_page a {
-	background-image: url(/images/icon_small_page.png);
+	background-position: 15px -2210px;
 	
 }
 #admin_tab_content ul li#list_documents a, #admin_tab_content ul li#new_document a {
-	background-image: url(/images/icon_small_documents.png);
+	background-position: 15px -2328px;
 	
 }
 
@@ -3432,11 +3446,12 @@ ul#selected_items li.related_search_selected{
      border-radius:6px;
 
 }
-a.related_item_remove_link{
+html body a.related_item_remove_link{
 	float: left;
 	clear: both;
 	margin: 6px 0 0 0;
 	font-size: 12px;
+	color: #ccc;
 }
 ul#selected_items li span.related_title{
 	font-size:16px;
