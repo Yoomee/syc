@@ -1,0 +1,20 @@
+- title "All Photo Albums"
+- unless @photo_albums.empty?
+  - @photo_albums.each do |photo_album|
+    .photo_album
+      -link_to photo_album_photos_path(photo_album) do
+        -unless photo_album.photos.blank?
+          =image_for(photo_album.photos.last, "130x")
+        %span
+          =photo_album.name
+- unless @system_albums.blank?
+  - @system_albums.each do |photo_album|
+    .photo_album
+      -link_to photo_album_photos_path(photo_album) do
+        -unless photo_album.photos.blank?
+          =image_for(photo_album.photos.last, "130x")
+        %span
+          =photo_album.name
+%br.clear
+- options_panel do
+  = link_to "New album", new_photo_album_path, :class=>'create'

@@ -6,6 +6,8 @@
 
 /* @override http://localhost:3000/stylesheets/client/styles.css */
 
+/* @override http://localhost:3000/stylesheets/client/styles.css */
+
 /* the tramlines vanilla stylesheet */
 
 /* ====================  Reset styles ===================== */
@@ -220,9 +222,7 @@ input, textarea {
 .formtastic label {
 	float: left;
 	margin: 0 7px 5px 0;
-	font-weight: bold;
-	color: #fff;
-	
+	font-weight: bold;	
 	
 }
 
@@ -241,11 +241,10 @@ input, textarea {
 .formtastic p {
 	line-height: 140%;
 }
-.formtastic input {
+.formtastic input, .formtastic textarea {
 	float: left;
 	clear: both;
 	background: #fff url(/images/sprite.png) repeat-x 0 -320px;
-	border: 1px solid #fff;
 
 }
 .formtastic .error input {
@@ -831,6 +830,7 @@ h1.page_title, h1#main_page_title{
 	font-size: 30px;
 	line-height: 40px;
 	letter-spacing: -2px;
+	clear: both;
 }
 h1.page_title {
 	float: left;	
@@ -1409,6 +1409,10 @@ p.nothing_yet, .intro, #intro, #flash_notice {
 	float: left;
 	width: 920px;
     
+}
+
+#main_page_title {
+	
 }
 
 /* ====== profile styles ====== */
@@ -3166,7 +3170,7 @@ ul.tabs_container li a:hover{
 }
 .formtastic textarea {
 	width: 400px;
-	border: none;
+	
 }
 input#page_title {
 
@@ -3221,6 +3225,12 @@ fieldset.buttons {
 
 .pages_tab p, #admin_tab_content p {
 	color: #bdd3db;
+}
+.pages_tab label, #admin_tab_content label {
+	color: #fff;
+}
+.pages_tab input, #admin_tab_content input {
+	border: none;
 }
 .pages_tab h1, .pages_tab h2, .pages_tab h3, .pages_tab h4, .pages_tab h5, .pages_tab h6 {
 	color: #fff;
@@ -3773,7 +3783,7 @@ div#contact_us_form input, div#contact_us_form textarea {
 /*============= admin dashboard ==================*/
 
 #admin_dashboard {
-	background: #496B7B url(/images/sprite.png) repeat-x 0 -3680px;
+ 	Abackground: #496B7B url(/images/sprite.png) repeat-x 0 -3680px;
 	float: left;
 	padding: 20px;
 	margin: 0 0 20px;
@@ -3800,27 +3810,138 @@ div#contact_us_form input, div#contact_us_form textarea {
 
 }
 .dash_col h2 {
-	background: url(/images/sprite.png) repeat-x 0 -70px;
 	float: left;
 	border-bottom: 1px solid #666;
-	width: 248px;
-	padding: 5px 20px;
-	text-shadow: 0 1px 0 #fff;
+	width: 268px;
+	padding: 5px 10px;
+	margin: 0;
 	
 }
 .dash_col h3 {
 	font-size: 17px;
+	line-height: 17px;
+	margin: 0 0 10px;
 }
 .dash_item {
 	float: left;
-	width: 228px;
+	width: 218px;
 	border-bottom: 1px solid #e8e8e8;
-	padding: 0 0 0 60px;
+	padding: 10px 15px 15px 55px;
+	background: url(/images/sprite.png) 0 -1900px no-repeat;
 }
-
-
+.dash_item li {
+	margin: 0 0 3px 0px;
+	list-style: none;
+}
+.dash_item li a {
+	display: block;
+	background: url(/images/sprite.png) 0px -975px no-repeat;
+	padding: 0 0 0 15px;
+}
+.dash_item ul {
+	margin: 0;
+}
 .controller_admin h1#main_page_title {
 	background: url(/images/icon_admin.png) no-repeat 0 6px;
 	padding: 0 0 0 35px;
-	margin: 0 0 10px 20px;
+	margin: 0 0 0px 30px;
+}
+#dash_sections_and_pages {
+	background-position: 10px -2190px;
+}
+#dash_images {
+	background-position: 10px -2430px;
+}
+#dash_documents {
+	background-position: 10px -2690px;
+}
+.create {
+	font-weight: bold;
+}
+#dash_enquiries {
+	background-position: 10px -2990px;
+}
+#dash_members {
+	background-position: 10px -3270px;
+}
+
+/*============= photo albums ==================*/
+
+.photo_album a {
+	float: left;
+	width: 150px;
+	display: block;
+	height: 150px;
+	background: #000 repeat-x 30px -320px;
+	float:left;
+	text-align: center;
+	margin: 0px 20px 20px 0;
+	position: relative;
+	
+	 -moz-border-radius:5px;
+     -webkit-border-radius:5px;
+     border-radius:5px;
+
+     box-shadow: 1px 2px 4px #333;
+     -moz-box-shadow: 1px 2px 4px #333;
+     -webkit-box-shadow: 1px 2px 2px #333;
+
+	
+	
+}
+.photo_album a img {
+	float: left;
+	margin: 10px;
+	
+}
+.photo_album a span {
+	float: left;
+	display: block;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	width: 150px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	
+     -moz-border-radius-bottomleft:5px;
+     -moz-border-radius-bottomright:5px;
+     -webkit-border-bottom-right-radius:4px;
+     -webkit-border-bottom-left-radius:4px;
+     border-bottom-right-radius:3px;
+     border-bottom-left-radius:3px;
+
+	
+}
+.photo_album a:hover span {
+	text-decoration: none;
+}
+.photo_album a:hover {
+	text-decoration: none;
+}
+
+.controller_photo_albums h1#main_page_title, .controller_photos h1#main_page_title {
+	background: url(/images/sprite.png) no-repeat 0px -2430px;
+	padding: 0 0 0 40px;
+	margin: 0 0 20px 0px;
+}
+/*============= documents ==================*/
+.controller_documents h1#main_page_title {
+	background: url(/images/sprite.png) no-repeat 0px -2690px;
+	padding: 0 0 0 40px;
+}
+
+/*============= sections ==================*/
+.controller_sections.action_index h1#main_page_title {
+	background: url(/images/sprite.png) no-repeat 0px -2190px;
+	padding: 0 0 0 40px;
+}
+
+/*============= enquiries ==================*/
+.controller_enquiries h1#main_page_title {
+	background: url(/images/sprite.png) no-repeat 0px -2990px;
+	padding: 0 0 0 40px;
 }
