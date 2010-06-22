@@ -4,7 +4,7 @@
     .photo_album
       -link_to photo_album_photos_path(photo_album) do
         -unless photo_album.photos.blank?
-          =image_for(photo_album.photos.last, "130x")
+          =image_for(photo_album.photos.last, "130x130")
         %span
           =photo_album.name
 - unless @system_albums.blank?
@@ -12,7 +12,7 @@
     .photo_album
       -link_to photo_album_photos_path(photo_album) do
         -unless photo_album.photos.blank?
-          =image_for(photo_album.photos.last, "130x")
+          =image_for(photo_album.photos.last, "130x130")
         %span
           =photo_album.name
 %br.clear
