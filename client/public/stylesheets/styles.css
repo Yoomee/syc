@@ -208,91 +208,8 @@ a:hover {
 .ui-datepicker {
 	z-index: 20;
 }
-
-/* =======  form styles  ====== */
-input, textarea {
-	border:1px solid #999999;
-	font-family:'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
-	font-size:14px;
-	padding:5px;
-	margin-bottom:15px;
-	
-	-moz-border-radius:4px;
-    -webkit-border-radius:4px;
-    border-radius:4px;
-    
-	
-}
-.formtastic label {
-	float: left;
-	margin: 0 7px 5px 0;
-	font-weight: bold;	
-	
-}
-
-.formtastic span.cke_skin_kama {
-	float: left;
-	clear: both;
-	border: none;
-	padding: 0;
-}
-
-.formtastic p, .formtastic label {
-	font-size: 16px;
-	
-	
-}
-.formtastic p {
-	line-height: 140%;
-}
-.formtastic input, .formtastic textarea {
-	float: left;
-	clear: both;
-	background: #fff url(/images/sprite.png) repeat-x 0 -320px;
-
-}
-.formtastic .error input {
-	-webkit-box-shadow:0 0 3px #bee786;
-	-moz-box-shadow:0 0 3px #bee786;
-	box-shadow:0 0 3px #bee786;
-	border-color: #87cd29;	
-}
-.formtastic ol {
-	list-style: none;
-}
-.formtastic ol li {
-	margin: 0 0 10px;
-	float: left;
-	clear: both;
-}
-
-.image_preview {
-  clear: left;
-}
-
-html body.controller_enquiries form {
-	background:#fff;
-	color: #000;
-}
-.controller_enquiries .formtastic input, .controller_enquiries .formtastic textarea {
-	color: #000;
-	border: 1px solid #666;
-	float: left;
-	clear: both;	
-}
-.controller_enquiries .formtastic label {
-	color: #000;
-	float: left;
-	clear: both;
-}
-#contact_us_form h3 {
-	
-}
-.formtastic p.contact_us_form_intro {
-	margin: 0 0 20px 0;
-}
 /* =======  colours  ====== */
-a, .required  {
+a, p.inline-errors {
 	color:#D4205D;
 }
 body span.cal_sheet span.month {
@@ -304,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* ==========button styles ========= */
 /* general large button*/
-input[type="submit"], a.bttn_l {
+input[type="submit"], a.bttn_l, .formtastic input[type="submit"], .formtastic  a.bttn_l {
 	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;
 	border:none;
 	
@@ -334,6 +251,27 @@ input[type="submit"], a.bttn_l {
 a.bttn_l:hover, .join_activity_link:hover {
 	text-decoration:none;
 }
+
+#main .photo_browser_button {
+	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -160px;
+	border:none;
+	color:#000;
+	font:bold 15px/1.5 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
+	margin:10px 0 0;
+	padding:5px 13px;
+	float:left;
+	
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    
+    -webkit-box-shadow:1px 1px 2px #333;
+    -moz-box-shadow:1px 1px 2px #333;
+    box-shadow:1px 1px 2px #333;    
+
+   text-shadow:0 1px 0 #cdcdcd;  
+}
+
 /* general small button */
 #news_feed_older_btn, .bx_h a, button, html body .bttn {
 	background:#FCFCFC url(/images/bttn_small.png) repeat-x scroll 0 0;
@@ -370,6 +308,110 @@ a.bttn_l:hover, .join_activity_link:hover {
 #post_bttn {
 	float:right;
 }
+/* =======  form styles  ====== */
+input, textarea {
+	border:1px solid #999999;
+	font-family:'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif;
+	font-size:14px;
+	padding:5px;
+	margin-bottom:15px;
+	
+	-moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    
+	
+}
+.formtastic label {
+	float: left;
+	margin: 0 7px 5px 0;
+	font-weight: bold;	
+	
+}
+
+.formtastic span.cke_skin_kama {
+	float: left;
+	clear: both;
+	border: none;
+	padding: 0;
+}
+
+.formtastic p, .formtastic label {
+	font-size: 16px;
+	line-height: 16px;
+	
+	
+}
+.formtastic p {
+	line-height: 140%;
+}
+.formtastic input, .formtastic textarea {
+	float: left;
+	clear: both;
+	background: #fff url(/images/sprite.png) repeat-x 0 -320px;
+
+}
+body .formtastic input[type="radio"], body .formtastic input[type="checkbox"] {
+	border: none;
+	background: none;
+	margin-right: 6px;
+}
+body .formtastic .error input, body .formtastic .error textarea, body .formtastic .error .cke_editor_page_text_editor {
+	-webkit-box-shadow:0 0px 3px rgba(0,0,0,0.3);
+	-moz-box-shadow:0 0px 3px rgba(0,0,0,0.3);
+	box-shadow:0 0px 3px rgba(0,0,0,0.3);
+	border: 2px solid #d91c5c;	
+}
+p.inline-errors {
+	font-size: 15px;
+	line-height: 15px;
+	
+}
+.formtastic ol {
+	list-style: none;
+}
+.formtastic ol li {
+	margin: 0 0 10px;
+	float: left;
+	clear: both;
+}
+
+#page_photo_preview {
+	float: left;
+	background: #000;
+	
+   -moz-border-radius:5px;
+     -webkit-border-radius:5px;
+     border-radius:5px;
+}
+#page_photo_preview img {
+	float: left;
+	margin: 8px;
+}
+
+span#page_photo_clear.photo_browser_clear {
+	background: url(/images/sprite.png) no-repeat 0px -2015px;
+	float: left;
+	margin: 0 0 0 10px;
+	padding: 0 0 0 12px;
+}
+
+.image_preview {
+  clear: left;
+}
+
+html body.controller_enquiries form {
+	background:#fff;
+	color: #000;
+}
+#contact_us_form h3 {
+	
+}
+.formtastic p.contact_us_form_intro {
+	margin: 0 0 20px 0;
+}
+
+
 
 /* ====================  top  ===================== */
 div#top {
@@ -430,10 +472,6 @@ body#home #header{
 	-webkit-box-shadow:0px 1px 3px #324955;
     -moz-box-shadow:0px 1px 3px #324955;
     box-shadow:0px 1px 3px #324955;	
-	
-	
-
-	
 }
 
 #login_slide_bar_inside {
@@ -564,6 +602,7 @@ div#home_slideshow div#home_photo_4 {
 div#home_slideshow div#home_photo_5 {
 	background: url(/images/home_photo_5.jpg) repeat-x top center;
 }
+
 #user_links {
 	float:right;
 	margin:0px 0;
@@ -607,7 +646,6 @@ span.fb {
 fb.fb_login_not_logged_in.FB_login_button {
 	float: right;	
 }
-
 #search_box {
 	float:right;
 	height:26px;
@@ -1415,8 +1453,8 @@ p.nothing_yet, .intro, #intro, #flash_notice {
     
 }
 
-#main_page_title {
-	
+.controller_sections.action_create #main_page_title, .controller_sections.action_update #main_page_title, .controller_pages.action_create #main_page_title, .controller_pages.action_update #main_page_title {
+	margin-left: 100px;
 }
 
 /* ====== profile styles ====== */
@@ -1551,7 +1589,7 @@ ul.action_links li {
 }
 
 
-/* ====================  Sketch  ===================== */
+/* ====================  footer Sketch  ===================== */
 
 #sketch{
 	background:url("/images/footer2.png") no-repeat scroll center top transparent;
@@ -1579,10 +1617,6 @@ ul.action_links li {
 	 -moz-border-radius:4px;
      -webkit-border-radius:4px;
      border-radius:4px;
-
-
-
-
 
 }
 #footer_top_link:hover {
@@ -3129,7 +3163,7 @@ ul.tabs_container li a{
 	background: url(/images/sprite.png) no-repeat;
 	float:left;
 	margin:0;
-	padding:10px 25px 10px 50px;
+	padding:10px 25px 11px 50px;
 	text-align:left;
 	font-size: 17px;
 	color: #fff;
@@ -3163,7 +3197,12 @@ ul.tabs_container li#pages_snippets_link a {
 ul.tabs_container li#pages_related_items_link a {
  background-position: 15px -1790px;
 }
-
+ul.tabs_container li#sections_details_link a {
+ background-position: 15px -1850px;
+}
+ul.tabs_container li#sections_advanced_link a {
+ background-position: 15px -1910px;
+}
 ul.tabs_container li a:hover{
 	text-decoration: none;
 }
@@ -3195,6 +3234,8 @@ fieldset.buttons {
 	clear: both;
 }
 
+
+
 .sections_tab, .pages_tab, #admin_tab_content, #tab_loader {
 	background: #496B7B url(/images/sprite.png) repeat-x 0 -3680px;
 	padding: 20px;
@@ -3219,7 +3260,10 @@ fieldset.buttons {
     border-bottom-left-radius:5px;
 	
 }
-br#pages_tab_links_break {
+.formtastic .sections_tab input, .formtastic .sections_tab textarea, .formtastic .pages_tab input, .formtastic .pages_tab textarea, .formtastic #admin_tab_content input, .formtastic #admin_tab_content textarea {
+	border-color: #fff;	
+}
+br#pages_tab_links_break, br#sections_tab_links_break {
 	display:none;
 }
 .tabs_container li.invalid {
@@ -3235,14 +3279,11 @@ br#pages_tab_links_break {
 	width: 600px;
 }
 
-.pages_tab p, #admin_tab_content p {
+.pages_tab p, #admin_tab_content p, .sections_tab p {
 	color: #bdd3db;
 }
 .pages_tab label, #admin_tab_content label {
 	color: #fff;
-}
-.pages_tab input, #admin_tab_content input {
-	border: none;
 }
 .pages_tab h1, .pages_tab h2, .pages_tab h3, .pages_tab h4, .pages_tab h5, .pages_tab h6 {
 	color: #fff;
