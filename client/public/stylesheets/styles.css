@@ -3453,11 +3453,8 @@ div.related_result_links a {
 	display: block;
 	float: left;
 	margin: 4px 10px 0 0;
-
 	font-size: 12px;
-
-	
-	
+	color: #FFFFFF;
 }
 .related_item_add_link{
 	font-weight: bold;
