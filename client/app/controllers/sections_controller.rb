@@ -10,7 +10,7 @@ SectionsController.class_eval do
   end
   
   def reset_news_section_items_per_page
-    APP_CONFIG[:latest_stories_items_per_page] = per_page
+    APP_CONFIG[:latest_stories_items_per_page] = @per_page
   end
   
 end
