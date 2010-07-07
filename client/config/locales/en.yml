@@ -1,0 +1,5 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        blank: "please make sure you fill in this field"
