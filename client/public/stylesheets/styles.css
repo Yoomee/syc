@@ -1,12 +1,10 @@
-/* @override http://localhost:3000/stylesheets/client/styles.css */
-
-/* @override http://localhost:3000/stylesheets/client/styles.css */
-
-/* @override http://localhost:3000/stylesheets/client/styles.css */
-
-/* @override http://localhost:3000/stylesheets/client/styles.css */
-
-/* @override http://localhost:3000/stylesheets/client/styles.css */
+/* @override 
+	http://localhost:3000/stylesheets/client/styles.css
+	http://localhost:3000/stylesheets/client/styles.css
+	http://localhost:3000/stylesheets/client/styles.css
+	http://localhost:3000/stylesheets/client/styles.css
+	http://localhost:3000/stylesheets/client/styles.css
+*/
 
 /* the tramlines vanilla stylesheet */
 
@@ -3654,19 +3652,19 @@ html body form {
 	border-color:#9c226a;
 }
 /* ========== young carer's section ========== */
-.section_12 {
+.section_12, .section_15 {
 	background: url(/images/header_yc.png) no-repeat center 40px;	
 }
-.section_12 a, .section_12 #nav ul li#link_ypp a {
+.section_12 a, .section_15 a, .section_12 #nav ul li#link_ypp a, .section_15 #nav ul li#link_ypp a {
 	color: #199fd2;
 }
-.section_12 .left_col {
+.section_12 .left_col, .section_15 .left_col {
 	border-color:#199fd2 ;
 }
-.section_12 .call_to_action {
+.section_12 .call_to_action, .section_15 .call_to_action {
 	background: #199fd2 url(/images/call_to_action.png) no-repeat bottom left;
 }
-.section_12 h1#site_logo a {
+.section_12 h1#site_logo a, .section_15 h1#site_logo a {
 	background: none;
 	height: 110px;
 }
