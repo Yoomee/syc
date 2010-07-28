@@ -7,7 +7,7 @@ Section.class_eval do
     end
   
     def ypp
-      Section.find_by_name("YPP")
+      Section.find(12)
     end
   
   end
