@@ -1,10 +1,5 @@
-/app
-/config
-/db
-/script
-/lib
-/test
-/public
-/vendor
+/public/uploads
+/public/dragonfly/20*
+/uploads/20*
 /log
 /tmp
