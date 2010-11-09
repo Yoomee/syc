@@ -1,0 +1,3 @@
+sphinx/*
+test.sqlite3
+schema.rb

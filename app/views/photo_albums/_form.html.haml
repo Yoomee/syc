@@ -1,0 +1,8 @@
+- semantic_form_for photo_album do |form|
+  -form.inputs do
+    =form.input :name
+    =form.input :system_album if @logged_in_member && admin_logged_in?
+    =form.input :attachable_type, :as => :hidden
+    =form.input :attachable_id, :as => :hidden
+  - form.buttons do 
+    = form.commit_button

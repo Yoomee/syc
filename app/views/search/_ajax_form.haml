@@ -1,0 +1,22 @@
+-loading_callback ||= ""
+-complete_callback ||= ""
+:javascript
+  var SearchForm = {
+    loading: function() {
+      $('#suggest').hide(0, function() {
+        $('#spinner').show();
+      });
+    },
+    complete: function() {
+      $('#spinner').hide(0, function() {
+        $('#suggest').show();      
+      });
+    }
+  };
+=text_field_tag "search[term]", '', :autocomplete => 'off', :onkeypress => "return event.keyCode!=13"
+=observe_field 'search_term', :url => {:controller => "search", :action => "create", :autocomplete => true, :results_view_path => results_view_path}, :frequency => 0.5, :loading => "SearchForm.loading();#{loading_callback}", :complete => "SearchForm.complete();#{complete_callback}", :with => 'search[term]', :update => 'suggest' #, :condition => "$('#search_term').attr('value').length >= 3"
+%br.clear
+
+#spinner{:style => "display:none;"}
+  =image_tag "ajax_loader.gif"
+#suggest

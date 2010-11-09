@@ -1,0 +1,5 @@
+-semantic_form_for @mail do |form|
+  -form.inputs do
+    =form.input :recipient_id, :as => :hidden
+    =form.inputs :from, :subject, :html_body, :plain_body
+  =form.buttons

@@ -1,0 +1,9 @@
+-title 'Sections'
+-if @sections.empty?
+  %p
+    There are no sections yet.
+-else
+  =render :partial => 'sections', :locals => {:sections => @sections}
+-options_panel do
+  =back_link
+  =link_if_allowed 'New Section', new_section_proc

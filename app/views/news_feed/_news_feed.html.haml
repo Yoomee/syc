@@ -1,0 +1,5 @@
+%ul#news_feed.latest_list.lst 
+  -news_feed_items.each do |news_feed_item|
+    =render_news_feed_item(news_feed_item)
+#news_feed_older_items_loader{:style => "display:none"}
+  =image_tag "news_feed_ajax_loader.gif"

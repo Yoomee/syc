@@ -1,0 +1,20 @@
+-title 'Search'
+-if @search.empty?
+  %p
+    Sorry, no results were found matching your search. Try a different search below.
+-else
+  %p
+    =pluralize @search.size, 'result'
+    =was_or_were @search.size
+    found for your search:
+  -@search.results.each do |result|
+    %h3
+      =image_or_photo_for(result, "30x")
+      =link_to search_heading(result, @search.term), result
+    %p
+      =search_summary(result, @search.term)
+%h2
+  Search again
+%p
+  Change your search term or narrow your search to specific items here:
+=render :partial => 'form', :locals => {:search => @search}

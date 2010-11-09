@@ -1,0 +1,7 @@
+-params[:enquiry_fields] ||= {}
+-semantic_fields_for "enquiry_fields" do |fields|
+  -fields.inputs do
+    =fields.input :name, :input_html => {:value => params[:enquiry_fields][:name] ||= @logged_in_member}
+    =fields.input :email_address, :input_html => {:value => params[:enquiry_fields][:email_address] ||= (@logged_in_member.email unless @logged_in_member.nil?)}
+    =fields.input :address, :as => 'text', :input_html => {:value => params[:enquiry_fields][:address], :rows => 4}
+    =fields.input :message, :as => 'text', :input_html => {:value => params[:enquiry_fields][:message]}

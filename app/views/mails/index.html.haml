@@ -1,0 +1,27 @@
+-title (@mailing ? "Mails for #{@mailing.name}" : "All Mail")
+-if @mailing && @mailing.not_sent?
+  %p
+    This mailing has not sent any emails yet. 
+    =link_if_allowed("Send emails", send_emails_mailing_proc(@mailing), :confirm => "Are you sure?")
+    now.
+-else
+  %table
+    %tr
+      %th
+        Reciepient
+      %th
+        Subject
+      %th
+        Status
+    -@mails.each do |mail|
+      %tr
+        %td
+          =link_to(mail.recipient_full_name, mail.recipient)
+        %td
+          =link_to mail.subject, mail
+        %td
+          =mail.status.humanize
+-options_panel do
+  =back_link
+  =link_if_allowed "All mails", mails_proc if @mailing
+  =link_if_allowed "All mailings", mailings_proc

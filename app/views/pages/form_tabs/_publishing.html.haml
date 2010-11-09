@@ -1,0 +1,14 @@
+:javascript
+  $(document).ready(function() {
+    PageForm.init_datepicker();
+    $('#expires').click(PageForm.updateExpiryStatus);
+  });
+-semantic_fields_for page do |fields|
+  -fields.inputs do
+    =fields.input :permalink_name, :help => "Please set a permalink (ie. a 'pretty' shortcut to the page)"
+    =fields.input :weight, :label => 'Order', :help => "Please set an 'order' for the page (pages with higher order numbers will appear further down the list)"
+    =fields.input :formatted_publish_on, :label => 'Publish on', :as => :string, :input_html => {:class => 'datetime'}
+    =check_box_tag :expires, true, page.expires?
+    =label_tag :expires, 'Expires'
+    -content_tag :div, :id => 'expires_date', :style => page.expires? ? '' : 'display: none;' do
+      =fields.input :formatted_expires_on, :label => 'Expires on', :as => :string, :input_html => {:class => 'datetime'}

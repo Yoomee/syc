@@ -1,0 +1,4 @@
+- title "New link"
+= render :partial => 'form', :locals => {:link => @link}
+- options_panel do
+  = link_if_allowed "#{forename_or_your(@link.member).titleize} videos", member_links_proc(@link.member)

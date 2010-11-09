@@ -1,0 +1,4 @@
+-unless sections.empty?
+  %ul
+    -sections.each do |section|
+      =render :partial => 'section', :object => section

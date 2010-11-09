@@ -1,0 +1,12 @@
+-params[:id] ||= params[:enquiry][:form_name]
+- title @enquiry.form_title
+- semantic_form_for @enquiry do |form|
+  =#form.error_messages
+  -form.inputs do
+    =form.input :form_name, :as => "hidden"
+    =form.input :member_id, :as => "hidden"
+    =render :partial => "#{@enquiry.form_name.downcase}_form", :locals => {:enquiry => @enquiry, :form => form}
+  - form.buttons do 
+    = form.commit_button "Send"
+-options_panel do
+  =back_link

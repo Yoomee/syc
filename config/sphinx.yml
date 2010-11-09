@@ -1,0 +1,4 @@
+development:
+  min_prefix_len: 1
+production:
+  min_prefix_len: 1

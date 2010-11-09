@@ -1,0 +1,6 @@
+-semantic_fields_for section do |fields|
+  -fields.inputs do
+    =fields.input :permalink_name, :help => "You can set a permalink (ie. a 'pretty' shortcut to the page)"  
+    =fields.input :description, :input_html => {:rows => 5}  
+    =fields.input :weight, :label => 'Order', :help => 'Set the order for the section (sections with higher order numbers will appear further down)', :input_html => {:size => 2}    
+    %br.clear

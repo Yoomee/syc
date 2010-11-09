@@ -1,0 +1,19 @@
+- title (@attachable ? "#{@attachable}'s albums" : "All Photo Albums")
+- if @photo_albums.empty?
+  = no_photo_albums_message
+- else
+  - @photo_albums.each do |photo_album|
+    .photo_album
+      =link_to photo_album.name, photo_album_photos_path(photo_album)
+- unless @system_albums.blank?
+  %h5 System Albums
+  - @system_albums.each do |photo_album|
+    .photo_album
+      =link_to photo_album.name, photo_album_photos_path(photo_album)
+%br.clear
+- options_panel do
+  - if @attachable
+    = link_if_allowed @attachable, @attachable
+    = link_if_allowed "Create an album", new_attachable_photo_album_proc(@attachable) if @attachable==@logged_in_member
+  -else
+    = link_to "New album", new_photo_album_path

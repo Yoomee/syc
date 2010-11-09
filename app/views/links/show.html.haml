@@ -1,0 +1,20 @@
+- title link_to("#{@link.name}", @link.url, :target => "_blank")
+-if @link.url_error? && @link.owned_by?(@logged_in_member)
+  %p.intro="There was a problem retrieving information from the url you provided for this link. You may want to double-check it's correct."
+#left_column
+  =link_to(image_for(@link, "500x"), @link.url, :target => "_blank")
+#right_column
+  %h4=@link.title
+  -if @link.description.blank?
+    %p="No description" unless @link.title.blank?
+  -else
+    %p=@link.description
+%br.clear
+- options_panel do
+  = link_if_allowed "#{forename_or_your(@link.member).titleize} links", member_links_proc(@link.member)
+  - if @link.member==@logged_in_member
+    = link_if_allowed "New link", new_link_proc
+  - else
+    = link_if_allowed "Add your own link", new_link_proc
+  = link_if_allowed "Edit", edit_link_proc(@link)
+  = link_if_allowed "Destroy", @link, :confirm => 'Are you sure?', :method => :delete

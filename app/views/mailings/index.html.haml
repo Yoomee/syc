@@ -1,0 +1,24 @@
+- title "Mailings"
+
+%table
+  %tr
+    %th Name
+    %th From
+    %th Subject
+    %th Status
+    %th{:colspan => 3} Actions
+  - @mailings.each do |mailing|
+    %tr
+      %td= link_to(mailing.name, mailing)
+      %td= h mailing.from
+      %td= h mailing.subject
+      %td= "#{mailing.status.humanize}"
+      %td
+        -if mailing.not_sent?
+          =link_if_allowed 'Send emails', send_emails_mailing_proc(mailing), :confirm => "Are you sure?"
+        -else
+          =link_if_allowed 'View mails', mails_proc(:mailing_id => mailing)
+      %td= link_if_allowed 'Edit', edit_mailing_proc(mailing)
+      %td= link_if_allowed 'Delete', mailing, :confirm => 'Are you sure?', :method => :delete
+-options_panel do
+  =link_if_allowed "New mailing", new_mailing_proc

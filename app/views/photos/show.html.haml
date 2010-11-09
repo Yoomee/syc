@@ -1,0 +1,12 @@
+- title "#{@photo.name}"
+%p
+  =h @photo.description
+=image_for(@photo)
+%br.clear
+- options_panel do
+  - if @photo.album
+    = link_if_allowed "View album", photo_album_photos_proc(@photo.album)
+  - else
+    = link_if_allowed "View All", photos_proc
+  = link_if_allowed "Edit", edit_photo_proc(@photo)
+  = link_if_allowed "Delete", @photo, :confirm => 'Are you sure?', :method => :delete

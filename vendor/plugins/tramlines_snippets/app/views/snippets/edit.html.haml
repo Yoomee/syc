@@ -1,0 +1,8 @@
+-content_for(:head) do
+  =javascript_include_tag :ckeditor
+-title "Edit #{@snippet.name}"
+-semantic_form_for(@snippet) do |form|
+  -form.inputs do
+    =form.input :text, :as => :ck_text
+  -form.buttons do
+    =form.submit 'Save'

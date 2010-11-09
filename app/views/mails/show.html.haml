@@ -1,0 +1,22 @@
+- title "Email to #{@mail.recipient}"
+
+%p
+  %strong From:
+  =h @mail.from
+%p
+  %strong Subject:
+  =h @mail.subject
+%p
+  %strong Html Body
+  %br
+  =@mail.html_body
+%p
+  %strong Plain Body
+  %br
+  =h @mail.plain_body
+%p
+  =link_if_allowed("Send email", send_email_mail_proc(@mail), :confirm => "Are you sure?") if @mail.not_sent?
+-options_panel do
+  =back_link
+  =link_if_allowed "Edit", edit_mail_proc(@mail)
+  =link_if_allowed "Delete", @mail, :method => :delete, :confirm => "Are you sure?"

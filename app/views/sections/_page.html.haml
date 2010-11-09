@@ -1,0 +1,14 @@
+%li
+  =link_to page, page
+  -if !page.been_published?
+    \-
+    %span.page_status
+      not yet published
+  -elsif page.expired?
+    \-
+    %span.page_status
+      expired
+  -bracket(:class => 'admin_links') do
+    -separate_links do
+      =link_if_allowed 'Edit', edit_page_proc(page)
+      =link_if_allowed 'Destroy', page, :method => :delete, :confirm => "Are you sure you want to delete this page?"

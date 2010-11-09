@@ -1,0 +1,5 @@
+-title "Members"
+%ul
+  -@members.each do |member|
+    %li
+      =link_to member.full_name, member
