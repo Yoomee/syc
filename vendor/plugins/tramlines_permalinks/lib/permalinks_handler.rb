@@ -24,6 +24,7 @@ class PermalinksHandler
         @logger.info "No permalink found"
       end
     end
+    env['PATH_INFO'] = env['REQUEST_URI']
     @app.call(env)
   end
 
