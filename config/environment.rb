@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 
   config.gem 'rack-cache', :lib => 'rack/cache'
-  config.gem 'dragonfly'
+  config.gem 'dragonfly', :version => '0.6.2'
   config.gem 'aasm', :source => 'http://gemcutter.org'
   config.gem 'formtastic', :source => 'http://gemcutter.org'
   config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '>=2.0.6'
