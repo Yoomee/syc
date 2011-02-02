@@ -57,6 +57,45 @@ end
 
 middleware.insert_after Rack::Lock, Dragonfly::Middleware, :images, app.url_path_prefix
 
+Dragonfly::TempObject.class_eval do
+  
+  def tempfile
+    @tempfile ||= begin
+      case initialized_with
+      when :tempfile
+        @tempfile = initialized_tempfile
+        @tempfile.close!
+      when :data
+        @tempfile = new_tempfile(initialized_data)
+      when :file
+        @tempfile = copy_to_tempfile(initialized_file.path)
+      end
+      @tempfile
+    end
+  end
+  
+  def file(&block)
+    f = tempfile.open
+    tempfile.binmode
+    if block_given?
+      ret = yield f
+      tempfile.close
+    else
+      ret = f
+    end
+    ret
+  end
+  
+  def new_tempfile(content=nil)
+    tempfile = Tempfile.new('dragonfly')
+    tempfile.binmode
+    tempfile.write(content) if content
+    tempfile.close
+    tempfile
+  end  
+  
+end
+
 # Dragonfly.active_record_macro(:image, app)
 
 # Extend ActiveRecord
