@@ -58,7 +58,7 @@ end
 middleware.insert_after Rack::Lock, Dragonfly::Middleware, :images, app.url_path_prefix
 
 Dragonfly::TempObject.class_eval do
-  
+=begin
   def tempfile
     @tempfile ||= begin
       case initialized_with
@@ -73,26 +73,27 @@ Dragonfly::TempObject.class_eval do
       @tempfile
     end
   end
-  
+=end
   def file(&block)
     f = tempfile.open
     tempfile.binmode
     if block_given?
       ret = yield f
-      tempfile.close
+      tempfile.close!
     else
       ret = f
     end
     ret
   end
-  
+=begin 
   def new_tempfile(content=nil)
     tempfile = Tempfile.new('dragonfly')
     tempfile.binmode
     tempfile.write(content) if content
-    tempfile.close
+    tempfile.close!
     tempfile
-  end  
+  end
+=end
   
 end
 
