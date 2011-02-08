@@ -4,7 +4,7 @@
       <tr>
         <td align="center" valign="middle">
           <%#= image_tag(image.image.url(TramlinesCkeditor::IMAGE_PREVIEW_SIZE), :alt=> image.image.url("700x>"), :title=>image.name, :onerror=>"this.src='/javascripts/ckeditor/images/ckfnothumb.gif'", :class=>'image', 'data-image-id' => image.id) %>
-          <%= image_tag(image.image.url(TramlinesCkeditor::IMAGE_PREVIEW_SIZE), :alt=> image.url, :title=>image.name, :onerror=>"this.src='/javascripts/ckeditor/images/ckfnothumb.gif'", :class=>'image', 'data-image-id' => image.id) %>
+          <%= image_tag(image.image.thumb(TramlinesCkeditor::IMAGE_PREVIEW_SIZE).url, :alt=> image.url, :title=>image.name, :onerror=>"this.src='/javascripts/ckeditor/images/ckfnothumb.gif'", :class=>'image', 'data-image-id' => image.id) %>
           
         </td>
        </tr>
