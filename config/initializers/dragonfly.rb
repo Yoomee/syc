@@ -74,6 +74,8 @@ Dragonfly::TempObject.class_eval do
     end
   end
 =end
+
+=begin
   def file(&block)
     f = tempfile.open
     tempfile.binmode
@@ -85,6 +87,9 @@ Dragonfly::TempObject.class_eval do
     end
     ret
   end
+  
+=end
+  
 =begin 
   def new_tempfile(content=nil)
     tempfile = Tempfile.new('dragonfly')
