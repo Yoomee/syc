@@ -115,15 +115,6 @@ class MemberTest < ActiveSupport::TestCase
       assert_equal @member.image_uid, 'my_profile_image'
     end
     
-    should "return default image if image_uid value is blank" do
-      @member = Factory.build(:member, :image_uid => '')
-      if File.exists?("#{RAILS_ROOT}/client/public/dragonfly/defaults/member_image")
-        assert_equal @member.image_uid, "client_defaults/member_image"
-      else
-        assert_equal @member.image_uid, "defaults/member_image"
-      end
-    end
-    
   end
   
   context "on call to to_s" do
