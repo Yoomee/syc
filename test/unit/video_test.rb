@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class VideoTest < ActiveSupport::TestCase
   
-  should_belong_to :attachable  
-  should_belong_to :member
+  should belong_to :attachable  
+  should belong_to :member
   
-  should_validate_presence_of :member
-  should_validate_presence_of :url
+  should validate_presence_of :member
+  should validate_presence_of :url
   
   context "a valid instance" do
     

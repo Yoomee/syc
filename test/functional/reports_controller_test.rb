@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/../test_helper'
-class ReportControllerTest < ActionController::TestCase
+class ReportsControllerTest < ActionController::TestCase
   
   should_have_admin_only_actions :create, :new
   

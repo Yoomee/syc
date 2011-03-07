@@ -1,11 +1,15 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class MailTest < ActiveSupport::TestCase
   
-  should_belong_to :mailing
-  should_belong_to :recipient
-  should_have_db_columns :subject, :plain_body, :html_body
+  should belong_to :mailing
+  should belong_to :recipient
+  should have_db_column(:subject)
+  should have_db_column(:plain_body)
+  should have_db_column(:html_body)
   
-  should_validate_presence_of :recipient, :subject, :from
+  should validate_presence_of(:recipient)
+  should validate_presence_of(:subject)
+  should validate_presence_of(:from)
   
   context "a valid instance" do
     

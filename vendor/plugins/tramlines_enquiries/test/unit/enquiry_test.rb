@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../../../../../test/test_helper'
 class EnquiryTest < ActiveSupport::TestCase
   
-  should_belong_to :member  
-  should_have_many :enquiry_fields
+  should belong_to :member  
+  should have_many :enquiry_fields
   
   context "a valid instance" do
     

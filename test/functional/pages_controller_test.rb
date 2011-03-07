@@ -65,8 +65,8 @@ class PagesControllerTest < ActionController::TestCase
         @page.expects(:save).returns false
       end
 
-      should_assign_to(:page) {@page}
-      should_render_template :new
+      should assign_to(:page).with {@page}
+      should render_template :new
 
     end
 
@@ -95,7 +95,7 @@ class PagesControllerTest < ActionController::TestCase
         @page.expects(:save).returns true
       end
 
-      should_respond_with(:redirect)
+      should respond_with(:redirect)
 
     end
 
@@ -124,7 +124,7 @@ class PagesControllerTest < ActionController::TestCase
         @page.expects(:destroy).returns true
       end
 
-      should_redirect_to('the section') {section_path(@page.section)}
+      should redirect_to('the section') {section_path(@page.section)}
 
     end
 
@@ -148,8 +148,8 @@ class PagesControllerTest < ActionController::TestCase
         Page.expects(:find).with('123').returns @page
       end
 
-      should_assign_to(:page) {@page}
-      should_render_template :edit
+      should assign_to(:page).with {@page}
+      should render_template :edit
       
       # should "render the text textarea" do
       #   assert_select "textarea#page_text_editor"
@@ -177,8 +177,8 @@ class PagesControllerTest < ActionController::TestCase
         Page.expects(:new).returns @page
       end
 
-      should_assign_to(:page) {@page}
-      should_render_template :new
+      should assign_to(:page).with {@page}
+      should render_template :new
 
     end
 
@@ -198,8 +198,8 @@ class PagesControllerTest < ActionController::TestCase
         get :new, :section_id => 123
       end
 
-      should_assign_to :page, :class => Page
-      should_render_template :new
+      should assign_to(:page).with_kind_of(Page)
+      should render_template :new
 
       should "set the section id for the page" do
         assert_equal 123, assigns['page'].section_id
@@ -227,8 +227,8 @@ class PagesControllerTest < ActionController::TestCase
         Page.expects(:find).with('123').returns @page
       end
 
-      should_assign_to(:page) {@page}
-      should_render_template :show
+      should assign_to(:page).with {@page}
+      should render_template :show
 
     end
 
@@ -252,8 +252,8 @@ class PagesControllerTest < ActionController::TestCase
         Page.expects(:find).with('123').returns @page
       end
 
-      should_render_template :show
-      should_assign_to(:page) {@page}
+      should render_template :show
+      should assign_to(:page).with {@page}
 
     end
 
@@ -282,8 +282,8 @@ class PagesControllerTest < ActionController::TestCase
         @page.expects(:update_attributes).with('valid_attributes' => false).returns false
       end
 
-      should_assign_to(:page) {@page}
-      should_render_template :edit
+      should assign_to(:page).with {@page}
+      should render_template :edit
 
     end
 
@@ -313,7 +313,7 @@ class PagesControllerTest < ActionController::TestCase
         @page.expects(:update_attributes).with('valid_attributes' => true).returns true
       end
 
-      should_respond_with(:redirect)
+      should respond_with(:redirect)
 
     end
 

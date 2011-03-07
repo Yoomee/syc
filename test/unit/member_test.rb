@@ -1,9 +1,22 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class MemberTest < ActiveSupport::TestCase
 
-  should_have_db_columns :bio, :company, :created_at, :email, :forename, :id, :image_uid, :password, :surname, :updated_at, :username
+  should have_db_column(:bio)
+  should have_db_column(:company)
+  should have_db_column(:created_at)
+  should have_db_column(:email)
+  should have_db_column(:forename)
+  should have_db_column(:id)
+  should have_db_column(:image_uid)
+  should have_db_column(:password)
+  should have_db_column(:surname)
+  should have_db_column(:updated_at)
+  should have_db_column(:username)
 
-  should_validate_presence_of :email, :forename, :surname, :password
+  should validate_presence_of(:email)
+  should validate_presence_of(:forename)
+  should validate_presence_of(:surname)
+  should validate_presence_of(:password)
 
   context "a valid instance" do
     

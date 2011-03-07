@@ -73,7 +73,7 @@ class PhotoAlbumsControllerTest < ActionController::TestCase
         @photo_album.expects(:update_attributes).with('valid_attributes' => false).returns false
       end
       
-      should_render_template :edit
+      should render_template :edit
       
     end
     
@@ -102,7 +102,7 @@ class PhotoAlbumsControllerTest < ActionController::TestCase
         @photo_album.expects(:update_attributes).with('valid_attributes' => true).returns true
       end
       
-      should_redirect_to("the photo album") {photo_album_photos_path(@photo_album)}
+      should redirect_to("the photo album") {photo_album_photos_path(@photo_album)}
       
     end
   end

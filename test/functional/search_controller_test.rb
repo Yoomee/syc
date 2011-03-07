@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class SearchControllerTest < ActionController::TestCase
 
-  should_route :get, "/search/jquery_autocomplete.json", :controller => 'search', :action => 'jquery_autocomplete', :format => 'json'
+  should route(:get, "/search/jquery_autocomplete.json").to({:controller => 'search', :action => 'jquery_autocomplete', :format => 'json'})
   
   context "create action" do
     
@@ -21,9 +21,9 @@ class SearchControllerTest < ActionController::TestCase
         Search.expects(:new).with({'term' => 'Test'}, :match_mode => nil, :autocomplete => nil).returns @search
       end
       
-      should_assign_to(:search) {@search}
+      should assign_to(:search).with {@search}
       
-      should_render_template :create
+      should render_template :create
       
     end
        
@@ -47,7 +47,7 @@ class SearchControllerTest < ActionController::TestCase
         Search.expects(:new).with({:term => 'Test'}, :autocomplete => true).returns @search
       end
       
-      should_respond_with_content_type 'application/json'
+      should respond_with_content_type 'application/json'
       
     end
     

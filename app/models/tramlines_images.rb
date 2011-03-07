@@ -1,25 +1,33 @@
 module TramlinesImages
   
-  def self.default_image_location(klass, image_attr_name)
-    default_filename = "#{klass.to_s.underscore}_#{image_attr_name.to_s.gsub('_uid', '')}"
-    File.exists?("#{RAILS_ROOT}/client/public/dragonfly/defaults/#{default_filename}") ? "client_defaults/#{default_filename}" : "defaults/#{default_filename}"
-  end
-  
   def self.included(klass)
-    image_attrs = klass.column_names.select {|col| col.match(/^.+_uid$/)}
-    image_attrs.each do |image_attr|
-      klass.image_accessor(image_attr.gsub('_uid', ''))
-      default_image = default_image_location(klass, image_attr)
-      klass.send(:define_method, image_attr) do
-        has_image?(image_attr) ? read_attribute(image_attr) : default_image
+    klass.cattr_accessor :image_attributes
+    klass.image_attributes = klass.column_names.select {|col| col.match(/^.+_uid$/)}
+    klass.image_attributes.each do |image_attr|
+      if klass.respond_to?(:table_name)
+        klass.send(:named_scope, "with_#{image_attr.gsub('_uid', '')}", :conditions => "#{klass.table_name}.#{image_attr} IS NOT NULL AND #{klass.table_name}.#{image_attr} != ''")
       end
+      klass.image_accessor(image_attr.gsub('_uid', ''))
+      klass.send(:validates_property, :mime_type, :of => image_attr.gsub('_uid', ''), :in => %w(image/jpeg image/png image/gif), :message => "must be an image")
     end
+    klass.extend(ClassMethods)
   end
   
-  def has_image?(image_attr = 'image_uid')
-    image_attr = image_attr.to_s
-    image_attr = "#{image_attr}_uid" unless image_attr.match(/_uid$/)
-    !read_attribute(image_attr).blank?
+  module ClassMethods
+    
+    def default_image(image_attr = 'image')
+      Dragonfly::App[:images].fetch(default_image_location(image_attr))
+    end
+
+    def default_image_location(image_attr = 'image')
+      default_filename = "#{self.to_s.underscore}_#{image_attr.to_s.gsub('_uid', '')}"
+      File.exists?("#{RAILS_ROOT}/client/public/dragonfly/defaults/#{default_filename}") ? "client_defaults/#{default_filename}" : "defaults/#{default_filename}"
+    end
+    
+  end
+  
+  def default_image(image_attr='image')
+    self.class::default_image(image_attr)
   end
   
 end

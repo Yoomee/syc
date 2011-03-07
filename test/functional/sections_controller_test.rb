@@ -27,7 +27,7 @@ class SectionsControllerTest < ActionController::TestCase
         @section.expects(:destroy).returns true
       end
       
-      should_redirect_to('the index') {{:action => 'index'}}
+      should redirect_to('the index') {{:action => 'index'}}
       
     end
     
@@ -51,8 +51,8 @@ class SectionsControllerTest < ActionController::TestCase
         Section.expects(:new).returns @section
       end
       
-      should_assign_to(:section) {@section}
-      should_render_template :new
+      should assign_to(:section).with {@section}
+      should render_template :new
       
     end
     
@@ -71,8 +71,8 @@ class SectionsControllerTest < ActionController::TestCase
         get :new, :section_id => 123
       end
 
-      should_assign_to :section, :class => Section
-      should_render_template :new
+      should assign_to(:section).with_kind_of(Section)
+      should render_template :new
       
       should "set the section's parent id" do
         assert_equal 123, assigns['section'].parent_id
@@ -106,8 +106,8 @@ class SectionsControllerTest < ActionController::TestCase
         @section.expects(:save).returns false
       end
       
-      should_assign_to(:section) {@section}
-      should_render_template :new
+      should assign_to(:section).with {@section}
+      should render_template :new
       
     end
 
@@ -137,8 +137,8 @@ class SectionsControllerTest < ActionController::TestCase
         @section.expects(:update_attributes).with('valid_attributes' => false).returns false
       end
       
-      should_assign_to(:section) {@section}
-      should_render_template :edit
+      should assign_to(:section).with {@section}
+      should render_template :edit
       
     end
     
@@ -167,7 +167,7 @@ class SectionsControllerTest < ActionController::TestCase
         @section.expects(:update_attributes).with('valid_attributes' => true).returns true
       end
       
-      should_respond_with(:redirect)
+      should respond_with(:redirect)
       
     end
     
@@ -196,7 +196,7 @@ class SectionsControllerTest < ActionController::TestCase
         @section.expects(:save).returns true
       end
       
-      should_respond_with(:redirect)
+      should respond_with(:redirect)
       
     end
   
@@ -221,8 +221,8 @@ class SectionsControllerTest < ActionController::TestCase
         Section.expects(:find).with('123').returns @section
       end
      
-      should_assign_to(:section) {@section}
-      should_render_template :edit
+      should assign_to(:section).with {@section}
+      should render_template :edit
       
     end
     
@@ -241,8 +241,8 @@ class SectionsControllerTest < ActionController::TestCase
         get :index
       end
       
-      should_render_template :index
-      should_assign_to(:sections) {@sections}
+      should render_template :index
+      should assign_to(:sections).with {@sections}
       
     end
 
@@ -253,8 +253,8 @@ class SectionsControllerTest < ActionController::TestCase
         get :index
       end
       
-      should_render_template :index
-      should_assign_to(:sections) {@sections}
+      should render_template :index
+      should assign_to(:sections).with {@sections}
       
     end
     
@@ -277,8 +277,8 @@ class SectionsControllerTest < ActionController::TestCase
         Section.expects(:find).with('123').returns @section
       end
     
-      should_render_template :show
-      should_assign_to(:section) {@section}
+      should render_template :show
+      should assign_to(:section).with {@section}
 
     end
     
@@ -314,9 +314,9 @@ class SectionsControllerTest < ActionController::TestCase
         @section.expects(:pages).returns mock(:published => mock(:latest => @pages))
       end
     
-      should_render_template :latest_stories
-      should_assign_to(:section) {@section}
-      should_assign_to(:pages_sections) {@pages_sections}
+      should render_template :latest_stories
+      should assign_to(:section).with {@section}
+      should assign_to(:pages_sections).with {@pages_sections}
 
     end
     
@@ -340,7 +340,7 @@ class SectionsControllerTest < ActionController::TestCase
         Section.expects(:find).with('123').returns @section
       end
 
-      should_redirect_to('the page') {page_path(@page)}
+      should redirect_to('the page') {page_path(@page)}
 
     end
     

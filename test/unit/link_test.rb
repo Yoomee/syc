@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class LinkTest < ActiveSupport::TestCase
   
-  should_belong_to :attachable  
-  should_belong_to :member
+  should belong_to :attachable  
+  should belong_to :member
   
   context "a valid instance" do
     

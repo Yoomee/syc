@@ -3,14 +3,18 @@ class PageTest < ActiveSupport::TestCase
 
   include TextHelper
   
-  should_have_db_columns :expires_on, :type => :datetime
-  should_have_db_columns :text, :type => :text
-  should_have_db_columns :title, :type => :string
+  should have_db_column(:expires_on).of_type(:datetime)
+  should have_db_column(:text).of_type(:text)
+  should have_db_column(:title).of_type(:string)
 
-  should_belong_to :photo
-  should_belong_to :section
+  should belong_to :photo
+  should belong_to :section
 
-  should_validate_presence_of :expires_on, :publish_on, :text, :title, :section
+  should validate_presence_of(:expires_on)
+  should validate_presence_of(:publish_on)
+  should validate_presence_of(:text)
+  should validate_presence_of(:title)
+  should validate_presence_of(:section)
   
   context "a new instance" do
     

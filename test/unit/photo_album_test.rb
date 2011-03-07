@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class PhotoAlbumTest < ActiveSupport::TestCase
   
-  should_have_many :photos
+  should have_many :photos
   
   context "a valid instance" do
     setup do 

@@ -1,13 +1,13 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class PhotoTest < ActiveSupport::TestCase
   
-  should_belong_to :attachable  
-  should_belong_to :member
-  should_belong_to :photo_album
+  should belong_to :attachable  
+  should belong_to :member
+  should belong_to :photo_album
   
   should_delegate :url, :to => :image
 
-  should_validate_presence_of :member
+  should validate_presence_of :member
   
   context "a valid instance" do
     

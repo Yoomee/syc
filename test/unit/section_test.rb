@@ -1,13 +1,15 @@
 require File.dirname(__FILE__) + '/../test_helper'
 class SectionTest < ActiveSupport::TestCase
   
-  should_have_db_columns :name, :weight, :view
+  should have_db_column(:name)
+  should have_db_column(:weight)
+  should have_db_column(:view)
   
-  should_validate_presence_of :name
+  should validate_presence_of :name
   
-  should_belong_to :parent
-  should_have_many :children
-  should_have_many :pages
+  should belong_to :parent
+  should have_many :children
+  should have_many :pages
   
   context "an instance" do
     

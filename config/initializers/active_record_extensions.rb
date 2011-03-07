@@ -71,6 +71,13 @@ class ActiveRecord::Base
     
   end
   
+  def has_image?(image_attr = 'image_uid')
+    # return false if self.class::included_modules.include?(TramlinesImages)
+    image_attr = image_attr.to_s
+    image_attr = "#{image_attr}_uid" unless image_attr.match(/_uid$/)
+    !read_attribute(image_attr).blank?
+  end
+  
   def is_media?
     self.class.included_modules.include?(Media)
   end

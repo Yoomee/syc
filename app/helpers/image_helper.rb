@@ -1,30 +1,43 @@
 module ImageHelper
-
-  def default_image_location(object, image_attr_name)
-    return "defaults/doc_#{object.file_ext_description}" if object.is_a?(Document)
-    default_filename = "#{object.class.to_s.underscore}_#{image_attr_name.to_s.gsub('_uid', '')}"
-    File.exists?("#{RAILS_ROOT}/client/public/dragonfly/defaults/#{default_filename}") ? "client_defaults/#{default_filename}" : "defaults/#{default_filename}"
+  
+  def default_image_for(object, img_size = nil, options = {})
+    method = options.delete(:method) || :image
+    image = object.default_image(method)
+    dragonfly_image_tag(image, options.merge(:img_size => img_size))
   end
   
-  # e.g image_for(@member, '100x100', :extension => 'png', :class => 'image')
-  def image_for(object, img_size, options = {})
-    method = options.delete(:method) || :image
-    img_size = APP_CONFIG[:photo_resize_geometry] if img_size.blank?
-    if method.to_s == "photo" 
-      image = object.photo.nil? ? Photo.new.image : object.photo.image
-    elsif object.has_image?
-      image = object.send(method)
+  def dragonfly_image_tag(image, options = {})
+    if image.nil?
+      options[:url_only] ? "" : image_tag("", options)
     else
-      image = Dragonfly::App[:images].fetch(default_image_location(object, method))
-    end
-    if !image.nil?
+      img_size = options[:img_size] || APP_CONFIG[:photo_resize_geometry]
       image = image.process(:thumb, img_size)
       image = image.encode(options.delete(:extension)) if !options[:extension].blank?
       image_url = options.delete(:host).to_s + image.url
-      options[:url_only] ? image_url : image_tag(image_url, options)
-    else
-      ''
+      return image_url if options[:url_only]
+      image_tag(image_url, options)
     end
+  end
+  
+  def get_img_size_options(size_string)
+    size_string = size_string.is_a?(Array) ? size_string.first : size_string
+    res = size_string.blank? ? nil : size_string.match(/(\d+)x?(\d*)/)
+    res ? [res[1], res[2]] : [nil, nil]
+  end
+  
+  # e.g image_for(@member, '100x100', :extension => 'png', :class => 'image')
+  def image_for(object, img_size = nil, options = {})
+    return options[:url_only] ? "" : image_tag("", options) if object.nil?
+    method = options.delete(:method) || :image
+    assoc = object.class.reflect_on_association(method.to_sym)
+    if !assoc.nil? && assoc.klass == Photo
+      image = object.send(method).nil? ? Photo.default_image : object.send(method).image
+    elsif object.has_image?
+      image = object.send(method)
+    else
+      image = object.default_image(method)
+    end
+    dragonfly_image_tag(image, options.merge(:img_size => img_size))
   end
   
   def image_or_photo_for(object, img_options = [], options = {})

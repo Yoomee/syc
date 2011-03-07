@@ -13,7 +13,7 @@ class SessionsControllerTest < ActionController::TestCase
       delete :destroy
     end
     
-    should_redirect_to('the homepage') {root_url}
+    should redirect_to('the homepage') {root_url}
     
     should "delete the member from the session" do
       assert_nil session[:logged_in_member_id]
@@ -28,7 +28,7 @@ class SessionsControllerTest < ActionController::TestCase
       get :new
     end
     
-    should_render_template :new
+    should render_template :new
     
   end
   
@@ -40,7 +40,7 @@ class SessionsControllerTest < ActionController::TestCase
       post :create, :login_email_or_username => 'test@test.com', :login_password => 'pa55w0rd'
     end
     
-    should_render_template :new
+    should render_template :new
     
   end
 
@@ -53,7 +53,7 @@ class SessionsControllerTest < ActionController::TestCase
       post :create, :login_email_or_username => 'test@test.com', :login_password => 'pa55w0rd'
     end
     
-    should_redirect_to('the homepage') {root_url}
+    should redirect_to('the homepage') {root_url}
 
     should "assign the member id to the session" do
       assert_equal 123, session[:logged_in_member_id]

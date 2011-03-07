@@ -13,8 +13,8 @@ class MembersControllerTest < ActionController::TestCase
       get :show, :id => 123
     end
     
-    should_assign_to(:member) {@member}
-    should_render_template :show
+    should assign_to(:member).with {@member}
+    should render_template :show
     
   end
   

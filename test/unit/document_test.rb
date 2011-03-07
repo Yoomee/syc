@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class DocumentTest < ActiveSupport::TestCase
 
-  should_belong_to :member
+  should belong_to :member
   
   context "a valid instance" do
     

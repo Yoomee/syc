@@ -15,9 +15,9 @@ class AdminControllerTest < ActionController::TestCase
         get :index
       end
       
-      should_assign_to :admin_tabs, :class => Array
-      should_assign_to :selected_tab, :class => AdminTab
-      should_render_template :index
+      should assign_to(:admin_tabs).with_kind_of(Array)
+      should assign_to(:selected_tab).with_kind_of(AdminTab)
+      should render_template :index
       
     end
     
