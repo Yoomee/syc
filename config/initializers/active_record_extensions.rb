@@ -51,15 +51,18 @@ class ActiveRecord::Base
     
     def search_attributes(attributes, options = {})
       attributes = [*attributes]
-      options[:delta] = true if options[:delta].nil?
-      options[:autocomplete] = true if options[:autocomplete].nil?
-      send('define_index') do
+      options.reverse_merge!(:delta => true, :autocomplete => true)
+      has_attributes = [*options[:has]].compact
+      define_index do
         attributes.each {|a| indexes a}
+        has_attributes.each {|a| has a}
         set_property :delta => options[:delta]
       end
       if options[:autocomplete]
-        send('define_index', "autocomplete_#{self.to_s.pluralize.downcase}") do
-          indexes attributes.first
+        autocomplete_attributes = options[:autocomplete].is_a?(Array) ? options[:autocomplete] : [attributes.first]
+        define_index("autocomplete_#{self.to_s.downcase}") do
+          autocomplete_attributes.each {|a| indexes a}
+          has_attributes.each {|a| has a}
           set_property :delta => options[:delta]
         end
       end
@@ -67,8 +70,7 @@ class ActiveRecord::Base
       define_method(:summary_fields) do
         attributes - [attributes.first]
       end
-    end
-    
+    end    
   end
   
   def has_image?(image_attr = 'image_uid')
