@@ -21,7 +21,7 @@ module TextHelper
   YOUTUBE_URL_RE = %r{(http://www\. | http:// | www\.)
     youtube\.com\/watch\?v=
     (\w+) # This is the ID
-    [^\s<]+
+    [\W]+
   }x
       
   def add_video_players(text)
@@ -105,6 +105,7 @@ module TextHelper
   def add_youtube_players(text)
     text.gsub(YOUTUBE_URL_RE) do
       youtube_id = $2
+      puts "youtube_id = #{youtube_id}"
       left, right = $`, $'
       if left =~ /<[^>]+$/ && right =~ /^[^>]*>/
         # do not change string; URL is already linked
