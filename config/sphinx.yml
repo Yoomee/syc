@@ -3,3 +3,8 @@ development:
 production:
   min_prefix_len: 1
   port: 9313
+  config_file: /data/syc/shared/production.sphinx.conf
+  searchd_file_path: /data/syc/shared/sphinx
+  searchd_log_path: /data/syc/shared/searchd.log
+  query_log_file: /data/syc/shared/searchd.query.log
+  pid_file: /data/syc/shared/searchd.production.pid
