@@ -100,7 +100,7 @@ class SectionsController < ApplicationController
     end
 
     def compare_weight_and_latest(item_a, item_b)
-      weight_comp = item_a.weight <=> item_b.weight
+      weight_comp = (item_a.weight || 0) <=> (item_b.weight || 0)
       return weight_comp unless weight_comp.zero?
       item_b.created_at <=> item_a.created_at
     end

@@ -32,5 +32,5 @@ ActionMailer::Base.smtp_settings = {
         :domain         => 'mail.studentbabble.com',
         :authentication => :login,
         :user_name      => 'info@studentbabble.com',
-        :password       => 'olive123'
+        :password       => "m:HE4,4JF2KL_{mG*;IG;(xGGjOA.;r"
 }
