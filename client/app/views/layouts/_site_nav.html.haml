@@ -5,15 +5,18 @@
     %li#link_about_us
       =link_to "About us", Section.about_us
     %li#link_what_we_do
-      =link_to 'What we do', Section.are_you
+      =link_to 'Find out more', Section.are_you
+    %li#link_support_us
+      =link_to("Support us", Section.find_by_id(18)) 
     %li#link_news
       =link_to 'News', Section.news
     %li#link_ypp=link_to("Young People", Section.find_by_id(12))
     %li#link_contact_us
       =link_to "Contact us", new_enquiry_path(:id => 'contact')
 
-  #search_box
-    -form_for Search.new do |search_form|
-      =search_form.text_field :term, :id => 'search_field'
-      =submit_tag "Search", :name => nil, :id => 'search_icon'
+  -if false    
+    #search_box
+      -form_for Search.new do |search_form|
+        =search_form.text_field :term, :id => 'search_field'
+        =submit_tag "Search", :name => nil, :id => 'search_icon'
   

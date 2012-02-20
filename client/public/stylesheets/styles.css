@@ -3561,6 +3561,12 @@ html body form {
 .section_3 .left_col {
 	border-color:#f43d17;
 }
+/* ========== support us section (18) ========== */
+.section_18 li#link_support_us a {
+  color: #d91c5c;
+}
+
+
 /* ==========.. a proffessional section (4) ========== */
 .section_4 h1#site_logo a {
 	background: url(/images/logo_4.png);
