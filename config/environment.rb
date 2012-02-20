@@ -26,7 +26,7 @@ Rails::Initializer.run do |config|
   config.gem 'aasm', :source => 'http://gemcutter.org'
   config.gem 'formtastic', :source => 'http://gemcutter.org'
   config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '>=2.0.6'
-  config.gem 'will_paginate'
+  config.gem 'will_paginate', :version => '2.3.15'
   config.gem 'haml'
   config.gem 'hpricot'
   config.gem 'thinking-sphinx', :source => "http://gemcutter.org", :lib => 'thinking_sphinx'
