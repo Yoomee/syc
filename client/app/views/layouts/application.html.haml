@@ -25,7 +25,7 @@
     = stylesheet_link_tag 'jquery.autocomplete'
     /[if IE 6]
       = stylesheet_link_tag 'client/ie6.css'
-    = formtastic_stylesheet_link_tag
+    =# formtastic_stylesheet_link_tag
     =yield :head
     -unless current_page?(new_session_path) 
       :javascript
