@@ -711,7 +711,7 @@ input#search_icon {
 	font: 17px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 }
-#nav ul li a:hover, .section_2 #nav ul li#link_news a, .controller_enquiries.action_new #nav ul li#link_contact_us a {	
+#nav ul li a:hover, .section_2 #nav ul li#link_news a, .controller_enquiries.action_new #nav ul li#link_contact_us a, body.page_124 #nav ul li#link_find_us a {	
 	text-decoration:none;
 	color: #D4205D;
 }
@@ -3809,17 +3809,24 @@ select#enquiry_i_am_a {
 	clear: both;
 	margin: 0 0 20px;
 }
-
-#contact_us_map {
+#contact_us_map,
+#find_us_map {
 	float: right;
-	margin: 0 0px 20px 20px;
-	width: 300px;
 	background: #d91c5c;
-	padding: 10px;
-	color: #fff;
-	
+	color: #fff;	
 }
-#contact_us_map h4 {
+#contact_us_map {
+	margin: 0 0px 20px 20px;
+	width: 300px;  
+	padding: 10px;  
+}
+#find_us_map {
+  width: 405px;
+  padding: 20px 20px;
+  margin: 0;
+}
+#contact_us_map h4,
+#find_us_map h4 {
 	color: #fff;
 }
 div#contact_us_form #enquiry_fields_message {
