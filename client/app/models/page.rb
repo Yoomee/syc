@@ -7,5 +7,9 @@ Page.class_eval do
     end
     
   end
+  
+  def staff_members?
+    [10,18].include?(id)
+  end
 
 end

@@ -1,0 +1,12 @@
+%table#staff_members
+  -StaffMember.find(:all, :order => :position).each do |staff_member|
+    %tr
+      %td=image_for(staff_member, '150x150#')
+      %td
+        %h4=staff_member.name
+        %p=staff_member.description
+        -if @m.is_admin? && controller_name == 'staff_members'
+          -bracket do
+            -separate_links do
+              =link_to("Edit",edit_staff_member_path(staff_member))
+              =link_to("Delete",staff_member_path(staff_member), :method => :delete, :confirm => "Are you sure?")

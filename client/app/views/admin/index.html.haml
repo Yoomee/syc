@@ -38,7 +38,13 @@
             List documents
         %li
           %a{ :href => "/documents/new" }
-            Add a document  
+            Add a document
+    #dash_members.dash_item
+      %h3
+        Staff members
+      %ul
+        %li=link_to('List staff members', staff_members_path)
+        %li=link_to('Add a staff member', new_staff_member_path)
   #dash_technical_stuff.dash_col
     %h2
       Technical stuff

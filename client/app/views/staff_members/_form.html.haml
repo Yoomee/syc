@@ -1,0 +1,9 @@
+-semantic_form_for staff_member, :html => {:multipart => true} do |form|
+  -form.inputs do
+    =form.input :name, :label => "Name and role", :input_html => {:size => 63}
+    =form.input :description, :input_html => {:rows => 6}
+    =form.input :image, :as => :file
+    =form.input :position
+  %br.clear
+  -form.buttons do
+    = form.commit_button :label => 'Save'

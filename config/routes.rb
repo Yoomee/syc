@@ -64,6 +64,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :statuses
   map.resources :news_feed_items  
   map.resources :reports
+  
+  map.resources :staff_members, :except => [:show]
 
   map.connect 'share/create/:id', :controller => 'share', :action => 'create'
   map.connect 'share/:model_name/:id', :controller => 'share', :action => 'new'

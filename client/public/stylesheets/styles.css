@@ -3999,3 +3999,15 @@ div#contact_us_form input, div#contact_us_form textarea {
 	background: url(/images/sprite.png) no-repeat 0px -2990px;
 	padding: 0 0 0 40px;
 }
+
+/*========== Staff members ==========*/
+table#staff_members td{
+  vertical-align: top;
+  border:none;
+  padding:0px;
+}
+table#staff_members td img{
+  margin-right:10px;
+  margin-bottom:10px;
+  width:150px;
+}
