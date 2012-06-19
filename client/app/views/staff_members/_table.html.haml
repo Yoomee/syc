@@ -5,7 +5,7 @@
       %td
         %h4=staff_member.name
         %p=staff_member.description
-        -if @m.is_admin? && controller_name == 'staff_members'
+        -if @m.try(:is_admin?) && controller_name == 'staff_members'
           -bracket do
             -separate_links do
               =link_to("Edit",edit_staff_member_path(staff_member))
