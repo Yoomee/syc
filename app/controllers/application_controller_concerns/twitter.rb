@@ -23,7 +23,7 @@ module ApplicationControllerConcerns::Twitter
   def fetch_latest_tweets_from(user, limit, replies)
     begin
       Rails.logger.info("Getting new tweets")
-      rss = RSS::Parser.parse(open("http://twitter.com/statuses/user_timeline/#{user}.rss").read, false)
+      rss = RSS::Parser.parse(open("https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=#{user}").read, false)
       items = replies ? rss.items : rss.items.reject {|item| item.title.match(/^.[^:]+:\s+@/)}
       items.first(limit).collect {|i| /^.[^:]+:\s+((\s|.)*)/.match(i.title)[1].gsub(%r{\n}, ' ')}
     rescue
