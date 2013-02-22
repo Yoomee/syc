@@ -6,7 +6,7 @@ class Document < ActiveRecord::Base
 
   attachment_accessor :file
   validates_presence_of :file
-  validates_size_of :file, :maximum => 1.megabyte, :allow_blank => true
+  validates_size_of :file, :maximum => 10.megabyte, :allow_blank => true
   
   def name
     read_attribute(:name).blank? ? file_name : read_attribute(:name)
