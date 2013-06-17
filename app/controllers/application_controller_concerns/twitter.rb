@@ -10,7 +10,7 @@ module ApplicationControllerConcerns::Twitter
   end
 
   def get_latest_tweets_from(user, limit = 4, replies = false)
-    if false #Rails.cache.to_s.in?(["ActiveSupport::Cache::MemCacheStore", "MemCacheStoreWithDeleteMatched"])
+    if Rails.cache.to_s.in?(["ActiveSupport::Cache::MemCacheStore", "MemCacheStoreWithDeleteMatched"])
       Rails.cache.fetch("latest_tweets_from_#{user}#{replies ? '_with_replies' : '_without_replies'}", :expires_in => 20.seconds) do
         fetch_latest_tweets_from(user, limit, replies)
       end
