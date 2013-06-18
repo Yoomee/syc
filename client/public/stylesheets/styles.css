@@ -73,7 +73,7 @@ body, textarea, input {font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',Fr
 	font-style: normal;
 }
 
-h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, .section_2 h1, h1#main_page_title, #contact_us_form h3, .dash_col h2  {
+h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, #referral_button, .section_2 h1, h1#main_page_title, #contact_us_form h3, .dash_col h2  {
 	font: 18px/27px 'QuicksandBold', Arial, sans-serif;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -447,10 +447,12 @@ body#home #header{
 	float: left;
 	width: 100%;
 }
-#donate {
+#donate,
+#referral_button {
 	display: none;
 }
-#home #donate {
+#home #donate,
+#home #referral_button {
 	position: absolute;
 	float: right;
 	margin: 0px 0 0;
@@ -470,6 +472,10 @@ body#home #header{
 	-webkit-box-shadow:0px 1px 3px #324955;
     -moz-box-shadow:0px 1px 3px #324955;
     box-shadow:0px 1px 3px #324955;	
+}
+#home #referral_button {
+  left:0px;
+  right:auto;
 }
 
 #login_slide_bar_inside {

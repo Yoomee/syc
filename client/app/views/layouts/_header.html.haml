@@ -13,7 +13,8 @@
         %strong
           = link_to @logged_in_member.full_name, member_path(@logged_in_member)
     %h1#site_logo
-      = link_to 'Sheffield Young Carers', :home  
+      = link_to 'Sheffield Young Carers', :home
+    =link_to 'Make a referral', '/referrals', :id => 'referral_button'
     =link_to 'Donate', 'https://uk.virginmoneygiving.com/fundraiser-web/donate/makeDonationForCharityDisplay.action?charityId=1001629&frequencyType=S', :id=>'donate'
   
   #home_slideshow
