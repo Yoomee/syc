@@ -462,7 +462,7 @@ body#home #header{
 	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;	
 	text-shadow: 0 1px 0 #fff;
 	font-size: 18px;
-	bottom: 15px;
+	bottom: 69px;
 	right: 0px;
 	
 	-webkit-border-radius:5px;
@@ -474,11 +474,10 @@ body#home #header{
     box-shadow:0px 1px 3px #324955;	
 }
 #home #referral_button {
-  left:10px;
-  right:auto;
   background: #0063dc;
   color: white;
   text-shadow: none;
+	bottom: 15px;
 }
 
 #login_slide_bar_inside {
