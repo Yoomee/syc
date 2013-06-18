@@ -476,6 +476,10 @@ body#home #header{
 #home #referral_button {
   left:0px;
   right:auto;
+  background: #00c4f2;
+  color: white;
+  text-shadow: none;
+  border-radius: 0;
 }
 
 #login_slide_bar_inside {
