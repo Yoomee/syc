@@ -474,12 +474,11 @@ body#home #header{
     box-shadow:0px 1px 3px #324955;	
 }
 #home #referral_button {
-  left:0px;
+  left:10px;
   right:auto;
   background: #00c4f2;
   color: white;
   text-shadow: none;
-  border-radius: 0;
 }
 
 #login_slide_bar_inside {
