@@ -6,7 +6,8 @@ class EnquiriesController < ApplicationController
 
   def create
     @enquiry = Enquiry.new(params[:enquiry])
-    if @enquiry.save
+    @enquiry.valid?
+    if verify_recaptcha(:model => @enquiry, :message => 'CAPTCHA_ERROR') && @enquiry.save
       Notifier.deliver_enquiry_notification @enquiry
       flash[:notice] = "#{@enquiry.response_message}"
       redirect_to root_url

@@ -41,5 +41,9 @@
       =form.input :address, :as => 'text', :input_html => {:rows => 4}
       =form.input :i_am_a, :as => 'select', :collection => ['I am a young carer','Someone in my family/my friend is a young carer', 'My work brings me into contact with young carers', 'I would like to support SYC','I would like to find out about volunteering with SYC ','I would like to receive regular email updates about SYC'], :label => 'I would like more information because', :include_blank => false
       =form.input :message, :as => 'text', :input_html => {:rows => 4}
+      %li.captcha
+        -if @enquiry.errors.full_messages.include?('CAPTCHA_ERROR')
+          %p.inline-errors='please try again'
+        =recaptcha_tags
 
       

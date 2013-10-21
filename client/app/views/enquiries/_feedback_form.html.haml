@@ -8,5 +8,9 @@
       =form.input :name
       =form.input :email_address
       =form.input :message, :as => 'text', :input_html => {:rows => 4}
+      %li.captcha
+        -if @enquiry.errors.full_messages.include?('CAPTCHA_ERROR')
+          %p.inline-errors='please try again'
+        =recaptcha_tags
 
       
