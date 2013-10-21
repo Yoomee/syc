@@ -3,3 +3,4 @@
 /uploads/20*
 /log
 /tmp
+*.DS_Store
