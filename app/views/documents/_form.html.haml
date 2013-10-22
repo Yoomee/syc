@@ -1,6 +1,7 @@
 - semantic_form_for document, :html => {:multipart => true} do |form|
   -form.inputs do
     =form.input :name  
+    =form.input :context, :as => :select, :collection => Document::CONTEXTS, :label => 'For area', :include_blank => false
     =form.input :file, :as => :file
     =form.input :member_id, :as => :hidden
   - form.buttons do 

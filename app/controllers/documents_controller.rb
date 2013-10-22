@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   
-  member_only :create, :index, :new
+  admin_only :create, :new
+  member_only :index
   owner_only :edit, :destroy, :update
 
   admin_link 'Documents', :new, 'New document'
@@ -11,7 +12,18 @@ class DocumentsController < ApplicationController
   before_filter :get_document, :only => %w{edit destroy show update}
   
   def index
-    @documents = @logged_in_member.is_admin? ? Document.all : @logged_in_member.documents
+    case
+    when @logged_in_member.is_admin?
+      @document_tabs = Document::CONTEXTS
+      @selected_tab = params[:tab_name] || 'pages'
+      @documents = Document.send("for_#{@selected_tab}")
+    when @logged_in_member.is_primary?
+      @documents = Document.for_primary
+    when @logged_in_member.is_secondary?
+      @documents = Document.for_secondary
+    else
+      @logged_in_member.documents
+    end
   end
   
   def show
@@ -19,7 +31,7 @@ class DocumentsController < ApplicationController
   end
   
   def new
-    @document = Document.new(:member => @logged_in_member)
+    @document = Document.new(:member => @logged_in_member, :context => params[:context])
   end
   
   def create
