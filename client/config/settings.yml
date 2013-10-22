@@ -8,5 +8,5 @@ development:
   recaptcha_public_key: 6LcDGOkSAAAAAEwTYa0f4cXjJhnNkcNKjDGzctWK
   recaptcha_private_key: 6LcDGOkSAAAAACuX7p0dOJshBszAGo5-iE9vfzbS
 production:
-  recaptcha_public_key: 6LctGOkSAAAAAKSpITbjoy_8EaJhnSnmzLNJy95J
+  recaptcha_public_key: 6LeQFukSAAAAAPHdC_aA33gQxuz76ePJKjk-8FPP
   recaptcha_private_key: 6LeQFukSAAAAAEdpGQx17SUjiI_oQHSJkE2AE5U6
