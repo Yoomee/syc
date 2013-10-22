@@ -765,7 +765,6 @@ div#home_slideshow {
 	width: 100%;
 	height: 265px;
 }
-}
 #home div#home_slideshow .cycle_nav {
 	float: right;
 }
@@ -802,7 +801,8 @@ div#home_slideshow div#home_photo_5 {
 #user_links p {
 	margin:0;
 }
-#user_links a {
+#user_links a,
+#user_links .member-name {
 	display: block;
 	padding: 10px;
 	background: #fff;
@@ -3434,7 +3434,7 @@ fieldset.buttons {
 
 
 
-.sections_tab, .pages_tab, #admin_tab_content, #tab_loader {
+.sections_tab, .pages_tab, #admin_tab_content, #tab_loader, #document_tab_content {
 	background: #496B7B url(/images/sprite.png) repeat-x 0 -3680px;
 	padding: 20px;
 	color: #fff;
@@ -3457,6 +3457,12 @@ fieldset.buttons {
     border-bottom-right-radius:5px;
     border-bottom-left-radius:5px;
 	
+}
+#document_tab_content ul li {
+	padding-top: 5px;
+}
+#document_tab_content ul li a {
+	color: #fff;
 }
 .formtastic .sections_tab input, .formtastic .sections_tab textarea, .formtastic .pages_tab input, .formtastic .pages_tab textarea, .formtastic #admin_tab_content input, .formtastic #admin_tab_content textarea {
 	border-color: #fff;	
@@ -3533,6 +3539,15 @@ li#new_page, li#new_section, #admin_tab_content ul li#new_photo_album a, #admin_
 	font-weight: bold;
 }
 
+ul.tabs_container li#pages_documents_tab a {
+ background-position: 15px -1790px;
+}
+ul.tabs_container li#primary_documents_tab a {
+ background-position: 15px -1790px;
+}
+ul.tabs_container li#secondary_documents_tab a {
+ background-position: 15px -1790px;
+}
 ul.tabs_container li#content_admin_tab a {
  background-position: 15px -1370px;
 }

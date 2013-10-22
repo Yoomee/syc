@@ -46,6 +46,14 @@ class Member < ActiveRecord::Base
       find :first, :conditions => ["email=? OR username=?", email_or_username, email_or_username]
     end
 
+    def primary
+      find :first, :conditions => ["username=?", 'primary']
+    end
+
+    def secondary
+      find :first, :conditions => ["username=?", 'secondary']
+    end
+
   end
 
   # Gets the full name of the member
@@ -59,6 +67,22 @@ class Member < ActiveRecord::Base
     end
   end
   alias_method :to_s, :full_name
+
+  def is_primary?
+    self == Member.primary
+  end
+
+  def is_primary_or_secondary?
+    is_primary? || is_secondary?
+  end
+
+  def is_secondary?
+    self == Member.secondary
+  end
+
+  def not_primary_or_secondary?
+    !is_primary_or_secondary?
+  end
 
   def status
     statuses.latest.limit(1).first

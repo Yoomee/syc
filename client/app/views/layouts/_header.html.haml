@@ -10,8 +10,10 @@
       - if logged_in?
         = link_to 'Logout', session_path, :method => :delete
         =link_if_allowed 'Admin', admin_proc
+        -if @logged_in_member.is_primary_or_secondary?
+          =link_to 'Documents', documents_path
         %strong
-          = link_to @logged_in_member.full_name, member_path(@logged_in_member)
+          = link_to @logged_in_member.full_name, (@logged_in_member.not_primary_or_secondary? ? member_path(@logged_in_member) : '#'), :class => 'member-name'
     %h1#site_logo
       = link_to 'Sheffield Young Carers', :home
     =link_to 'Make a referral', '/referrals', :id => 'referral_button'

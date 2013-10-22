@@ -23,11 +23,11 @@ module ApplicationControllerConcerns
       def allowed_to?(url_options, member)
         case
           when member_only_action?(url_options[:action])
-            !member.nil?
+            !member.nil? && (member.not_primary_or_secondary? || (url_options[:controller] == 'documents' && url_options[:action] == 'index')|| (url_options[:controller] == 'sessions' && url_options[:action] == 'destroy'))
           when admin_only_action?(url_options[:action])
             !member.nil? && member.is_admin?
           when owner_only_action?(url_options[:action])
-            !member.nil? && (member.is_admin? || associated_model_instance(url_options[:id]).owned_by?(member))
+            !member.nil? && (member.is_admin? || associated_model_instance(url_options[:id]).owned_by?(member)) && member.not_primary_or_secondary?
           else
             true
         end
