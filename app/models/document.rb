@@ -2,9 +2,9 @@
 class Document < ActiveRecord::Base
   Document::CONTEXTS = %w{page primary secondary}
 
-  named_scope :for_pages, :conditions => { :context => 'page' }
-  named_scope :for_primary, :conditions => { :context => 'primary' }
-  named_scope :for_secondary, :conditions => { :context => 'secondary' }
+  named_scope :for_pages, :conditions => { :context => 'page' }, :order =>  :name
+  named_scope :for_primary, :conditions => { :context => 'primary' }, :order =>  :name
+  named_scope :for_secondary, :conditions => { :context => 'secondary' }, :order =>  :name
 
   search_attributes %w{name file_name}
 
