@@ -1,6 +1,6 @@
 
 class Document < ActiveRecord::Base
-  Document::CONTEXTS = %w{pages primary secondary}
+  Document::CONTEXTS = %w{page primary secondary}
 
   named_scope :for_pages, :conditions => { :context => 'page' }
   named_scope :for_primary, :conditions => { :context => 'primary' }
