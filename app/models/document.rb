@@ -2,7 +2,7 @@
 class Document < ActiveRecord::Base
   Document::CONTEXTS = %w{page primary secondary}
 
-  named_scope :for_pages, :conditions => { :context => 'page' }, :order =>  :name
+  named_scope :for_page, :conditions => { :context => 'page' }, :order =>  :name
   named_scope :for_primary, :conditions => { :context => 'primary' }, :order =>  :name
   named_scope :for_secondary, :conditions => { :context => 'secondary' }, :order =>  :name
   named_scope :ordered_by_name, :order => "name ASC"

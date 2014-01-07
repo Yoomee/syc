@@ -1,7 +1,0 @@
-%ul
-  -@documents.each do |document|
-    -if allowed_to?(document_proc(document))
-      %li
-        =link_to document, document
-        =link_if_allowed "Edit", edit_document_proc(document), :prefix => "("
-        =link_if_allowed "Delete", document, :confirm => 'Are you sure?', :method => :delete, :prefix => " | ", :suffix => ")"

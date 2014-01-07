@@ -4,7 +4,8 @@
     -separate_links do
       =link_if_allowed 'Edit', edit_document_folder_proc(folder)
       =link_if_allowed 'Delete', folder, :method => :delete, :confirm => "Are you sure you want to delete this section? (all its documents will also be deleted)"
-      =link_if_allowed "New document", new_document_folder_document_proc(folder)
+      -if allowed_to?(new_document_folder_document_proc)
+        =link_to "New #{@selected_tab} document in this folder", "/document_folders/#{folder.id}/documents/new/#{folder.context}"
   -unless folder.documents.empty?
     %ul
       -folder.documents.each do |document|

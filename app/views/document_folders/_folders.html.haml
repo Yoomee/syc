@@ -1,0 +1,6 @@
+-@document_folders.each do |folder|
+  %ul.folder_list
+    =render('folder', :folder => folder)
+-@documents_without_folder.ordered_by_name.each do |document|
+  %ul.document_list
+    =render('document', :document => document)

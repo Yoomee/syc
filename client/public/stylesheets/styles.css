@@ -3458,7 +3458,7 @@ fieldset.buttons {
     border-bottom-left-radius:5px;
 	
 }
-#document_tab_content ul li {
+#document_tab_content > ul li {
 	padding-top: 5px;
 }
 #document_tab_content ul li a {
@@ -3538,8 +3538,16 @@ br#pages_tab_links_break, br#sections_tab_links_break {
 li#new_page, li#new_section, #admin_tab_content ul li#new_photo_album a, #admin_tab_content ul li#new_document a {
 	font-weight: bold;
 }
-
+ul.tabs_container li a:hover {
+	cursor: pointer;
+}
+ul.tabs_container li.active a:hover {
+	cursor: text;
+}
 ul.tabs_container li#pages_documents_tab a {
+ background-position: 15px -1790px;
+}
+ul.tabs_container li#page_documents_tab a {
  background-position: 15px -1790px;
 }
 ul.tabs_container li#primary_documents_tab a {
@@ -4208,6 +4216,9 @@ div#contact_us_form input, div#contact_us_form textarea {
 .controller_documents h1#main_page_title {
 	background: url(/images/sprite.png) no-repeat 0px -2690px;
 	padding: 0 0 0 40px;
+}
+ul.folder_list {
+	list-style-type: none;
 }
 
 /*============= sections ==================*/

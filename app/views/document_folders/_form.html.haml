@@ -1,6 +1,6 @@
 -semantic_form_for document_folder do |form|
   -form.inputs do
-    =form.input :context, :as => :select, :collection => Document::CONTEXTS, :label => 'For area', :include_blank => false
+    =form.input :context, :as => :hidden
     =form.input :name
   -form.buttons do
     =form.commit_button 'Save'

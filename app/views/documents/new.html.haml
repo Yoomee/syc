@@ -1,4 +1,4 @@
-- title "New Document"
+- title "New #{@document.context.try(:capitalize)} Document #{@document_folder.present? ? ('for ' + @document_folder.to_s + ' folder') : ''}"
 = render :partial => 'form', :locals => {:document => @document}
 - options_panel do
   = back_link
