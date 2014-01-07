@@ -5,9 +5,12 @@ class Document < ActiveRecord::Base
   named_scope :for_pages, :conditions => { :context => 'page' }, :order =>  :name
   named_scope :for_primary, :conditions => { :context => 'primary' }, :order =>  :name
   named_scope :for_secondary, :conditions => { :context => 'secondary' }, :order =>  :name
+  named_scope :ordered_by_name, :order => "name ASC"
+  named_scope :without_folder, :conditions => "documents.folder_id IS NULL OR documents.folder_id = ''"
 
   search_attributes %w{name file_name}
 
+  belongs_to :folder, :class_name => "DocumentFolder"
   belongs_to :member
 
   attachment_accessor :file

@@ -60,6 +60,9 @@ ActionController::Routing::Routes.draw do |map|
     photo_album.resources :photos, :collection => {:ajax => :get}
   end
   map.resources :searches, :controller => :search, :as => :search, :collection => {:jquery_autocomplete => :get}
+  map.resources :document_folders do |document_folder|
+    document_folder.resources :documents
+  end
   map.resources :documents
   map.resources :statuses
   map.resources :news_feed_items  

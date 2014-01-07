@@ -9,6 +9,7 @@ class DocumentsController < ApplicationController
 
   dont_set_waypoint_for :show
 
+  before_filter :get_document_folder, :only => %w{new create}
   before_filter :get_document, :only => %w{edit destroy show update}
   
   def index
@@ -63,6 +64,11 @@ class DocumentsController < ApplicationController
   end
   
   private
+  def get_document_folder
+    return true if params[:document_folder_id].blank?
+    @document_folder = DocumentFolder.find(params[:document_folder_id])
+  end
+
   def get_document
     @document = Document.find(params[:id])
   end
