@@ -23,7 +23,7 @@ module ApplicationControllerConcerns
       def allowed_to?(url_options, member)
         case
           when member_only_action?(url_options[:action])
-            !member.nil? && (member.not_primary_or_secondary? || (url_options[:controller] == 'documents' && url_options[:action] == 'index')|| (url_options[:controller] == 'sessions' && url_options[:action] == 'destroy'))
+            !member.nil? && (member.not_primary_or_secondary? || primary_secondary_allowed(url_options))
           when admin_only_action?(url_options[:action])
             !member.nil? && member.is_admin?
           when owner_only_action?(url_options[:action])
@@ -88,6 +88,9 @@ module ApplicationControllerConcerns
         end
       end
 
+      def primary_secondary_allowed(url_options)
+        (url_options[:controller] == 'document_folders' && url_options[:action] == 'index') || (url_options[:controller] == 'document_folders' && url_options[:action] == 'show') || (url_options[:controller] == 'sessions' && url_options[:action] == 'destroy')
+      end
     end
     
     def admin_logged_in?
