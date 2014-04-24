@@ -15,7 +15,7 @@ class DocumentsController < ApplicationController
   end
   
   def new
-    @document = Document.new(:member => @logged_in_member, :folder => @document_folder, :context => @document_folder.try(:context) || params[:context])
+    @document = Document.new(:member => @logged_in_member, :folder => @document_folder, :context => @document_folder.try(:context) || params[:context] || params[:id])
   end
   
   def create
