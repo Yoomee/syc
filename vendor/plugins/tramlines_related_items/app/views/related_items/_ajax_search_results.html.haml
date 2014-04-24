@@ -7,4 +7,4 @@
       .related_result_links
         =link_to "View #{result.class.to_s}", result, :target => "_blank", :class => "view_related_item_link", :title => "View this #{result.class.to_s} (opens in a new window)"
         .related_item_add_link
-          =" #{link_to_function "Add +", "RelatedItemsForm.add_selected_item('#{result.to_s}', '#{result.id}', '#{result.class.to_s}');", :title => "Add as a related item"}"
+          =" #{link_to_function "Add +", "RelatedItemsForm.add_selected_item('#{escape_javascript(result.to_s)}', '#{result.id}', '#{result.class.to_s}')", :title => "Add as a related item"}"
