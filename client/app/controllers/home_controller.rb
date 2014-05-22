@@ -1,7 +1,7 @@
 HomeController.class_eval do
   
   def index
-    @news = Page.find(:all, :conditions => {:section_id => Section.news.id}, :limit => 3, :order => 'publish_on DESC')
+    @news = Section.news.pages.published.sort_by(&:publish_on).reverse.first(3)
   end
   
 end
